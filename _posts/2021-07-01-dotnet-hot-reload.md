@@ -1,10 +1,10 @@
 ---
-title: '.NET Hot Reload is Awesome'
+title: 'dotNET Hot Reload is Awesome'
 date: '2021-07-01'
 categories:
 - Development
 tags: 
-- ".NET"
+- "dotNET"
 - "ASP.NET Core"
 - "Inner loop"
 ---

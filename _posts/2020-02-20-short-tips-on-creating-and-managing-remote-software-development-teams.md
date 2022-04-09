@@ -2,10 +2,10 @@
 title: 'Short Tips on Creating and Managing Remote Software Development Team'
 date: '2020-02-20'
 categories:
-- management
+- Management
 tags:
-- "remote work"
-- management
+- "Remote work"
+- Management
 ---
 
 We will skip the part about why do you do it (remote teams) and get straight to the point. Below are some short tips (derived from my experience, you can agree or disagree with it — it’s OK, this is strictly my opinion) to keep in mind when you are deciding, creating or dealing with remote software development teams.
