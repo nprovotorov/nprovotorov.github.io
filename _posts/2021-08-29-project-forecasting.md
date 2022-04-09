@@ -11,7 +11,7 @@ tags:
 - Project management
 ---
 
-The first article in this series is [here (Notes on Kanban Metrics)](/blog/2021-07-25-kanban-metrics)
+The first article in this series is [here (Notes on Kanban Metrics)](/kanban-metrics)
 
 ## Traditional approach to forecasting project completion dates
 
@@ -37,12 +37,12 @@ This method implies that Avg. velocity and Backlog size are constant, which (unf
 
 **Cons**:
 
-- gives a single number, and we know that they are fundamentally wrong (see `Probabilistic World` section [here](/blog/2021-07-25-kanban-metrics))
+- gives a single number, and we know that they are fundamentally wrong (see `Probabilistic World` section [here](/kanban-metrics))
 - doesn't account for uncertainty and variability (estimation errors, etc.)
 - doesn't account for velocity changes (due to tech debt, team dynamics, external dependencies, etc.)
 - doesn't account for backlog size changes (bugs, rework, new requirements, change requests, etc.)
 
-In real world this approach gives us **50th percentile** (see `Good boys - Percentiles` section [here](/blog/2021-07-25-kanban-metrics)) at best.
+In real world this approach gives us **50th percentile** (see `Good boys - Percentiles` section [here](/kanban-metrics)) at best.
 
 **Think about it**.
 
@@ -77,7 +77,7 @@ In our case **Inputs** would be our Historical data:
 
 Outputs, in our case, would be the range of dates with assigned probabilities of completing a project on a given date or earlier.
 
-You may ask - `What will I do with the range of dates?! I need only one date!` - in that case, please, read `Probabilistic World` section [here](/blog/2021-07-25-kanban-metrics).
+You may ask - `What will I do with the range of dates?! I need only one date!` - in that case, please, read `Probabilistic World` section [here](/kanban-metrics).
 
 In short - choose the percentile that is comfortable to you and it will give you a single date.
 

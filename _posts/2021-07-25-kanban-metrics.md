@@ -11,7 +11,7 @@ tags:
 
 Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.
 
-Second article in this series is here - [Project Forecasting](/blog/2021-08-29-project-forecasting).
+Second article in this series is here - [Project Forecasting](/project-forecasting).
 
 ## Kanban metrics
 
