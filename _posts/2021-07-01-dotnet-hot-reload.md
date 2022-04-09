@@ -1,9 +1,12 @@
 ---
 title: '.NET Hot Reload is Awesome'
 date: '2021-07-01'
-tags: ['.NET', 'ASP.NET Core', 'Inner loop']
-summary: '.NET 6 Hot Reload feature will accelerate developers inner loop and boost their productivity by providing instant feedback on code changes'
-draft: false
+categories:
+- Development
+tags: 
+- ".NET"
+- "ASP.NET Core"
+- "Inner loop"
 ---
 
 ## Why do I need it?
@@ -70,7 +73,7 @@ You will need [.NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0):
 5. Wait a little :)
 6. ROFIT! You will see changes when updated code is re-executed
 
-![Hot Reload Enabled](/static/images/dotnet-hot-reload/dotnet-hot-reload-sc1.png)
+![Hot Reload Enabled](/assets/images/dotnet-hot-reload/dotnet-hot-reload-sc1.png)
 
 ## What are the Limitations?
 
