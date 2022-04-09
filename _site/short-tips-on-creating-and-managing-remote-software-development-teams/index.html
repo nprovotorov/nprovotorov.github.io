@@ -1,0 +1,750 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Short Tips on Creating and Managing Remote Software Development Team - Notes and Thoughts</title>
+<meta name="description" content="We will skip the part about why do you do it (remote teams) and get straight to the point. Below are some short tips (derived from my experience, you can agree or disagree with it — it’s OK, this is strictly my opinion) to keep in mind when you are deciding, creating or dealing with remote software development teams.">
+
+
+  <meta name="author" content="Nikolay Provotorov">
+  
+  <meta property="article:author" content="Nikolay Provotorov">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes and Thoughts">
+<meta property="og:title" content="Short Tips on Creating and Managing Remote Software Development Team">
+<meta property="og:url" content="http://localhost:4000/short-tips-on-creating-and-managing-remote-software-development-teams/">
+
+
+  <meta property="og:description" content="We will skip the part about why do you do it (remote teams) and get straight to the point. Below are some short tips (derived from my experience, you can agree or disagree with it — it’s OK, this is strictly my opinion) to keep in mind when you are deciding, creating or dealing with remote software development teams.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2020-02-20T00:00:00+03:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/short-tips-on-creating-and-managing-remote-software-development-teams/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes and Thoughts Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Notes and Thoughts
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/bio-photo.png" alt="Nikolay Provotorov" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Nikolay Provotorov</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>CTO @ shtormtech.ru. ex-PM, Software Architect, Team Lead, Software Developer</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://twitter.com/nprovotorov" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/nprovotorov" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Short Tips on Creating and Managing Remote Software Development Team">
+    <meta itemprop="description" content="We will skip the part about why do you do it (remote teams) and get straight to the point. Below are some short tips (derived from my experience, you can agree or disagree with it — it’s OK, this is strictly my opinion) to keep in mind when you are deciding, creating or dealing with remote software development teams.">
+    <meta itemprop="datePublished" content="2020-02-20T00:00:00+03:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/short-tips-on-creating-and-managing-remote-software-development-teams/" class="u-url" itemprop="url">Short Tips on Creating and Managing Remote Software Development Team
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2020-02-20T00:00:00+03:00">February 20, 2020</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>We will skip the part about why do you do it (remote teams) and get straight to the point. Below are some short tips (derived from my experience, you can agree or disagree with it — it’s OK, this is strictly my opinion) to keep in mind when you are deciding, creating or dealing with remote software development teams.</p>
+
+<h2 id="my-experience-in-the-topic">My experience in the topic</h2>
+
+<p>I have 5+ years of experience working with two remote (aside from HQ) offices (5 to 12 people each) and around 15–20 completely remote workers from different regions and timezones scattered across two countries (~5000km between the most western and eastern employee :P ).</p>
+
+<p>Tips below will work as-is for smaller companies and, I’m sure, will still be mostly valid for much bigger companies.</p>
+
+<p>Not everything on the list we do perfectly and in every team and project, but we are working on it to become better.</p>
+
+<h2 id="remote-office-setup-ignore-this-if-you-are-hiring-remote-workers-without-the-office">Remote Office setup (ignore this if you are hiring remote workers without the office)</h2>
+
+<p>Here are some points to remember if you are going to open a new Remote Office:</p>
+
+<ul>
+  <li><strong>Geography</strong> — choose it wisely. You should know in advance who are your candidates, how many there are, where will they come from, how you will attract them, how will you keep them, who are your competitors on this market and so on. Apart from this, you should spend some time thinking about logistics (sending documents, buying/repairing equipment, furniture, etc.)</li>
+  <li><strong>Conference</strong> rooms — you need them. At least one. They work for big meetings and private matters. Of course, you will need a whiteboard (more is better), TV, camera and speakerphone there.</li>
+  <li><strong>Trusted leader</strong> — you could do without him, but with him, it would be 10 times easier, faster and better. It would be best if he shares your core values and principles and worked with you in HQ for some time (to share your culture and be able to spread it in the new office).</li>
+  <li><strong>Periodic Top-management visits</strong> — Again, you could live without it, but these visits serve two things: 1) they show your employees that they really matter and top-management knows and cares about them 2) gives top-management first-hand information about how are things really going “on the ground”.</li>
+  <li><strong>Team purchase</strong> — you should consider purchasing a ready-made team (at least 3 people) on the market and opening a new office on their base. This will speed up things, but it also can complicate culture integration and communications (if this team will try to isolate itself, and most teams will).</li>
+</ul>
+
+<h2 id="hiring">Hiring</h2>
+
+<p>Precise hiring becomes much more important with remote workers as you could not see a miss as soon as you could do it if a person is sitting near you.</p>
+
+<ul>
+  <li><strong>Interview with Team Lead and/or Manager</strong> — this is a must. You should check the “compatibility” of a new developer with his Team Lead and/or manager. Don’t hire if TL says that this was a good guy/girl and we should hire him, but “not in my team”.</li>
+  <li><strong>Interview with the camera</strong> — you could skip it, but it makes things much easier. Non-verbal signals are important and you should try to see your candidates in live conversation before you hire someone.</li>
+  <li><strong>Previous experience in remote work</strong> — it would be best if a candidate has already worked remotely. Not everyone can work like this.</li>
+  <li><strong>Timezones</strong> — you should choose what timezones are acceptable for you. We are most comfortable with ±2 (and ±4 max) hours from HQ time, but it could differ greatly depending on your specifics. You should be clear on this topic in the interview.</li>
+  <li><strong>Region specifics</strong> — some regions have their own working culture that will influence a candidate’s performance — in some regions, there are mostly fast and furious candidates and in some are mostly slow and meditative candidates, the same picture with reliability, etc. From experience, we have calculated some regions where we try to avoid hiring people.</li>
+  <li><strong>Region hiring specifics</strong> — e.g. in some regions there is no “open” market for developers — they choose a new company completely by word of mouth, or based on where they relatives or friends work and so on, so you can’t use hiring sites or ads there. This specifics could render useless your hiring strategy — so keep it in mind.</li>
+  <li><strong>Check core values</strong> — very important. You should check every candidate (local or remote) if their core values are aligned with yours, but with remote workers, you should double-check it.</li>
+  <li><strong>Good communication skills</strong> — very important. Both written and spoken. Twice as important as for the local staff.</li>
+  <li><strong>Finally — Don’t hire if you are not sure</strong> (this tip becomes less relevant for big companies as they can live through this kind of errors with much less damage, but for small companies, it can be deadly).</li>
+</ul>
+
+<h2 id="onboarding">Onboarding</h2>
+
+<p>You should learn how to onboard new employees fast, efficient and with the predictable result.</p>
+
+<ul>
+  <li><strong>Onboarding process</strong> — you should have one. It could be short and simple or it could be a boot camp in the jungle, but it should be in place. Every new employee should go through it.</li>
+  <li><strong>Mentor</strong> — a must. You should assign a mentor for every new employee, that will supervise and advise a newcomer in the first few months (in our case mentors are mostly Team Leads).</li>
+  <li><strong>Formal Probation expectation</strong> — very important. For every role you hire, you should have some template with formal expectations from the person during the Probation period (like what he should know, do/not do, demonstrate, deliver, etc. at the end of the Probation). You should tailor it to the concrete employee and have regular talks with them on their progress in achieving these expectations. Mentors should lead this.</li>
+  <li><strong>Local assimilation</strong> — ideally if newcomers can work for some time (first weeks, better months) in HQ to make connections and soak up your culture. Not always possible, but worth it.</li>
+</ul>
+
+<h2 id="infrastructure">Infrastructure</h2>
+
+<ul>
+  <li><strong>Remote access to infrastructure, services, environments, etc.</strong> — no access, no work :) You should be ready for it with some typical procedures to grant required access for newcomers (VPN, accounts, roles, permissions and so on).</li>
+  <li><strong>Information security</strong> — with remote workers the attack surface becomes much higher — you should think about how you will protect and audit your data, services, etc.</li>
+</ul>
+
+<h2 id="tools-and-software">Tools and Software</h2>
+
+<ul>
+  <li><strong>Software licences</strong> — Don’t forget you need them. If they don’t sit in your office doesn’t mean that they don’t use your software licences (e.g. IntelliJ IDEA, MS Visual Studio).</li>
+  <li><strong>Issue tracking software</strong> — a must-have. Jira, TFS, Trello — any will do, but you should have one. And only one.</li>
+  <li><strong>Code versioning systems</strong> — a must-have. Git, SVN, etc. will do. But the most common CVS nowadays is Git, so just use it if you don’t have any special reasons not to.</li>
+</ul>
+
+<h2 id="management">Management</h2>
+
+<ul>
+  <li><strong>Highly skilled and communicative Team Leads that actually Care for their teammates</strong> — this is a key factor for success. Try to find them or grow them.</li>
+  <li><strong>Balanced team compositions</strong> — like 1xSenior-2xMiddle-3xJunior, and not 1xMiddle-5xJunior. Try not to build entire teams from scratch (not always possible) — build a new team on the base of a current employee, who already holds culture and knowledge and share it with newcomers.</li>
+  <li><strong>Clear expectations</strong> — always translate clear expectations of people, tasks, etc.</li>
+  <li><strong>Just enough standards and processes</strong> — don’t push too much, but don’t leave too much at chance either. Planning, Code conventions, Branching, Pipelines, Rules on working with Issues, Release management — mostly must-have formal processes.</li>
+  <li><strong>Daily meetings (e.g. SCRUMS)</strong> — absolutely mandatory. Just use it.</li>
+  <li><strong>Retrospectives</strong> — learn how to do good ones. Almost must-have for remote teams.</li>
+  <li><strong>Good requirements</strong> — depends on your business, but most of the time you should put all of the effort to get the best and detailed requirements you can as remote communications are much less efficient and many things could be understood incorrectly. You really should pay attention to this.</li>
+  <li><strong>Use Issue tracker for all of your work</strong> — no comments. Just use it.</li>
+  <li><strong>Excessive control at the start</strong> — controversial topic, but try it. Synchronize on goals at the start of the day, check progress in the middle, check results at the end. If it is going well — relax and gracefully stop it, if it is not going well — make corrections.</li>
+  <li><strong>Metrics</strong> — have some metrics and watch for them regularly (e.g. velocity, bugs per feature, etc.). This will help you measure the performance of individuals and teams and look for problems. But be accurate with metrics, they should not become KPIs so people will not start to abuse them.</li>
+</ul>
+
+<h2 id="communications-and-knowledge-sharing">Communications and Knowledge Sharing</h2>
+
+<ul>
+  <li><strong>Architecture diagrams</strong> — you should have at least High Level Design diagrams and everyone should know where to find them.</li>
+  <li><strong>Wiki</strong> — an absolute must — this is an external brain for your company. Any will do, but Confluence is the most popular choice. You should pay special attention to make everyone contribute to wiki articles and not hold information in emails, brains, napkins, etc.</li>
+  <li><strong>Chat</strong> — controversial thing. But better have some structured chats with dedicated channels. Most popular are Slack, MS Teams, Skype. Use very carefully because chats can steal a lot (surprisingly a lot) of productive time from the teams.</li>
+  <li><strong>Feedback on communications</strong> — you should give it to each other regularly. Always try to improve it — become more clear, gentle, efficient.</li>
+  <li><strong>Overcommunicate</strong> — always. Not sure? Overcommunicate. Sure? Same.</li>
+  <li><strong>1 on 1 s</strong> — you should be doing them. Your Team Leads and managers should be doing them too. No excuses. They could be short and simple, but they must be in place.</li>
+</ul>
+
+<h2 id="developing-people">Developing people</h2>
+
+<ul>
+  <li><strong>Individual Development plans</strong> — talk with people, get to know what are they interested in, make formal IDPs, attach mentor, regularly track progress — PROFIT.</li>
+</ul>
+
+<h1 id="culture">Culture</h1>
+
+<ul>
+  <li><strong>A formal manifestation of your core values and principles incorporated in culture</strong> — a very hard thing to do, but can help tremendously.</li>
+  <li><strong>Culture agents/evangelists</strong> — ideally if you have at least one in every team. They should “infect” their teammates with your culture (but reverse effect could also happen).</li>
+  <li><strong>The Gathering</strong> — you should try at all costs to gather all of your remote workers in one place at least several times a year (for example, on corporate events, strategy sessions, etc.).</li>
+</ul>
+
+<p>That’s it. And may the Force be with you.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#management" class="page__taxonomy-item p-category" rel="tag">Management</a><span class="sep">, </span>
+    
+      <a href="/tags/#remote-work" class="page__taxonomy-item p-category" rel="tag">Remote work</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#management" class="page__taxonomy-item p-category" rel="tag">Management</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2020-02-20T00:00:00+03:00">February 20, 2020</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Short+Tips+on+Creating+and+Managing+Remote+Software+Development+Team%20http%3A%2F%2Flocalhost%3A4000%2Fshort-tips-on-creating-and-managing-remote-software-development-teams%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fshort-tips-on-creating-and-managing-remote-software-development-teams%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fshort-tips-on-creating-and-managing-remote-software-development-teams%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/dotnet-hot-reload/" class="pagination--pager" title="dotNET Hot Reload is Awesome
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/team-topologies-book-notes/" rel="permalink">Notes on Team Topologies Book
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-30T00:00:00+03:00">November 30, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project-forecasting/" rel="permalink">Project Forecasting Using Monte Carlo Method
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-29T00:00:00+03:00">August 29, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The first article in this series is here (Notes on Kanban Metrics)
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/openai-codex/" rel="permalink">SkyNet is (almost) here. OpenAIs developer AI - Codex
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-11T00:00:00+03:00">August 11, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kanban-metrics/" rel="permalink">Notes On Kanban Metrics (Lead time, Cycle time, Throughput)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-25T00:00:00+03:00">July 25, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          11 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/nprovotorov" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nprovotorov" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Notes and Thoughts. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

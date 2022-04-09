@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-09T18:11:18+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notes and Thoughts</title><subtitle>My notes, thoughts and blog posts mostly on software development and engineering management.</subtitle><author><name>Nikolay Provotorov</name></author><entry><title type="html">Notes on Team Topologies Book</title><link href="http://localhost:4000/team-topologies-book-notes/" rel="alternate" type="text/html" title="Notes on Team Topologies Book" /><published>2021-11-30T00:00:00+03:00</published><updated>2021-11-30T00:00:00+03:00</updated><id>http://localhost:4000/team-topologies-book-notes</id><content type="html" xml:base="http://localhost:4000/team-topologies-book-notes/">&lt;p&gt;&lt;img src=&quot;/assets/images/2021-11-30-team-topologies-book-notes/book_cover.jpg&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;general-notes&quot;&gt;General notes&lt;/h2&gt;
+
+&lt;p&gt;Overall this is a great book, and many other authors and sources recommend it as a must-read for any management role.&lt;/p&gt;
+
+&lt;p&gt;I will recommend it as well 🙂 This book gives a good structure on how to think and design your teams.&lt;/p&gt;
+
+&lt;p&gt;But… it could be like 3x times shorter than it is right now. A big part of the text is just a repetition of what was already said, just from a different angle.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-of-my-notes&quot;&gt;Some of my notes&lt;/h2&gt;
+
+&lt;p&gt;Book methodology relies heavily on &lt;a href=&quot;https://en.wikipedia.org/wiki/Conway%27s_law&quot;&gt;Convey’s Law&lt;/a&gt; and respective &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reverse Convey Maneuver&lt;/code&gt; (when we design team structures to match the desired architecture)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization’s communication structure.&lt;/p&gt;
+
+  &lt;p&gt;— Melvin E. Conway&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;management-principles&quot;&gt;Management principles&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Teams are fundamental building blocks for organisational design&lt;/li&gt;
+  &lt;li&gt;Teams should be five to nine people&lt;/li&gt;
+  &lt;li&gt;Teams should “own” their software&lt;/li&gt;
+  &lt;li&gt;Each part of the system needs to be owned by exactly one team (no shared ownership)&lt;/li&gt;
+  &lt;li&gt;Move authority to leaders with the best information to take action (move away from Command and Control structures)&lt;/li&gt;
+  &lt;li&gt;Organization Design should go hand in hand with System Design - they are connected and influence each other&lt;/li&gt;
+  &lt;li&gt;Manage cognitive load on teams (clear teams responsibilities and boundaries)&lt;/li&gt;
+  &lt;li&gt;Organization should not allow any subsystem to grow beyond the cognitive load of its team (match software boundaries to team cognitive load)&lt;/li&gt;
+  &lt;li&gt;Teams should be long-lived and autonomous&lt;/li&gt;
+  &lt;li&gt;Work should go to the Team not the other way around&lt;/li&gt;
+  &lt;li&gt;Software architecture is needed before we organize teams, otherwise, team structure will dictate the architecture&lt;/li&gt;
+  &lt;li&gt;Use proven software architecture good practices to achieve fast flow within teams:
+    &lt;ul&gt;
+      &lt;li&gt;Loose coupling&lt;/li&gt;
+      &lt;li&gt;High cohesion&lt;/li&gt;
+      &lt;li&gt;Version compatibility&lt;/li&gt;
+      &lt;li&gt;Cross-team testing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fast flow requires restricting communication between teams (not in every case - where we need to explore something and find a new knowledge communication is encouraged, but where we need execution - communications should be kept to a minimum)&lt;/li&gt;
+  &lt;li&gt;Architects need to be a manager too (or managers will be your architects)&lt;/li&gt;
+  &lt;li&gt;If two teams that should not be communicating heavily according to bad designs in fact ARE communicating heavily - something is not right (API issues, platform issues, etc.)&lt;/li&gt;
+  &lt;li&gt;Some people just can’t work in teams - remove them&lt;/li&gt;
+  &lt;li&gt;Reward whole teams, not individuals&lt;/li&gt;
+  &lt;li&gt;Minimize team distractions (limit meetings, reduce emails, etc.)&lt;/li&gt;
+  &lt;li&gt;Increase Developer Experience for other teams who are using your code or API&lt;/li&gt;
+  &lt;li&gt;Define Team APIs (code, documentation, UX, etc.)&lt;/li&gt;
+  &lt;li&gt;Use business domain bounded contexts to define software (and team) boundaries&lt;/li&gt;
+  &lt;li&gt;Reduce handover between teams&lt;/li&gt;
+  &lt;li&gt;Delivery teams should be cross-functional, with all the skills to design, develop, test, deploy and operate the system&lt;/li&gt;
+  &lt;li&gt;Feature teams require high engineering maturity (automating tests, minimal dependencies, CI/CD, etc.)&lt;/li&gt;
+  &lt;li&gt;Change team topologies and team interactions according to your situation (they should not be static)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;team-types-according-to-team-topologies-authors&quot;&gt;Team Types according to Team Topologies authors&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-11-30-team-topologies-book-notes/team_types.png&quot; alt=&quot;team types&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;stream-aligned-teams&quot;&gt;Stream aligned teams&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;primary team form - most teams should be of this type, all other types exist to support it&lt;/li&gt;
+  &lt;li&gt;aligned to a single valuable stream of work&lt;/li&gt;
+  &lt;li&gt;able to build and deliver customer value quickly, safely, without requiring hand-offs to other teams&lt;/li&gt;
+  &lt;li&gt;optimized for flow&lt;/li&gt;
+  &lt;li&gt;use loose coupling, minimize dependencies and coordination between Stream-aligned teams&lt;/li&gt;
+  &lt;li&gt;use Complicated-subsystem teams and Platform teams to reduce cognitive load&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;enabling-team&quot;&gt;Enabling team&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;collaborative nature&lt;/li&gt;
+  &lt;li&gt;“Technical Consulting Teams”&lt;/li&gt;
+  &lt;li&gt;provides guidance, not execution&lt;/li&gt;
+  &lt;li&gt;End goal: increase the autonomy of stream-aligned teams by growing their capabilities. Stream-aligned team should not have a need for enabling’s team help after a few weeks or months&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;complicated-subsystem-team&quot;&gt;Complicated-subsystem team&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;build and maintain part of the system requiring heavily specialist knowledge&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;platform-team&quot;&gt;Platform team&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;enable stream-aligned teams to deliver work with autonomy&lt;/li&gt;
+  &lt;li&gt;provides internal services to reduce the cognitive load of stream-aligned teams&lt;/li&gt;
+  &lt;li&gt;strong focus on usability and reliability for their services&lt;/li&gt;
+  &lt;li&gt;aim for the thinnest viable platform (TVP) and avoid letting the platform dominate the discourse&lt;/li&gt;
+  &lt;li&gt;should focus on Developer Experience&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;team-interaction-modes-according-to-team-topologies-authors&quot;&gt;Team Interaction Modes according to Team Topologies authors&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-11-30-team-topologies-book-notes/interaction_modes.png&quot; alt=&quot;interaction modes&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;x-as-a-service&quot;&gt;X-as-a-Service&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;consuming or providing something with minimal collaboration&lt;/li&gt;
+  &lt;li&gt;clear responsibilities, predictable delivery (“just works”)&lt;/li&gt;
+  &lt;li&gt;focus on Developer Experience&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;collaboration&quot;&gt;Collaboration&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;teams working closely together&lt;/li&gt;
+  &lt;li&gt;drives innovation, use when discovery is needed&lt;/li&gt;
+  &lt;li&gt;high communication costs&lt;/li&gt;
+  &lt;li&gt;architecture will be blended due to Conway’s Law&lt;/li&gt;
+  &lt;li&gt;should be used as a temporary mode, establish interfaces and move to X-as-a-Service when possible&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;facilitating&quot;&gt;Facilitating&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;helping another team to clear impediments&lt;/li&gt;
+  &lt;li&gt;reduce gaps in capabilities&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Teams always should ask: “What kind of interactions should we have with another team?”&lt;/p&gt;
+
+&lt;h2 id=&quot;team-topologies-core-ideas&quot;&gt;Team Topologies Core Ideas&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-11-30-team-topologies-book-notes/core_ideas.png&quot; alt=&quot;core ideas&quot; /&gt;&lt;/p&gt;</content><author><name>Nikolay Provotorov</name></author><category term="Management" /><category term="Books" /><category term="Management" /><category term="Teams" /><category term="Books" /><summary type="html"></summary></entry><entry><title type="html">Project Forecasting Using Monte Carlo Method</title><link href="http://localhost:4000/project-forecasting/" rel="alternate" type="text/html" title="Project Forecasting Using Monte Carlo Method" /><published>2021-08-29T00:00:00+03:00</published><updated>2021-08-29T00:00:00+03:00</updated><id>http://localhost:4000/project-forecasting</id><content type="html" xml:base="http://localhost:4000/project-forecasting/">&lt;p&gt;The first article in this series is &lt;a href=&quot;/blog/2021-07-25-kanban-metrics&quot;&gt;here (Notes on Kanban Metrics)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;traditional-approach-to-forecasting-project-completion-dates&quot;&gt;Traditional approach to forecasting project completion dates&lt;/h2&gt;
+
+&lt;p&gt;What is a traditional way to forecast project completion date?&lt;/p&gt;
+
+&lt;p&gt;We take:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Average velocity per Iteration/Period (e.g. Story Points per Sprint, Number of Done stories per Week, etc.)&lt;/li&gt;
+  &lt;li&gt;Backlog size (number of stories or estimated in Story Points, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and do the math:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Iterations left = Backlog size / Avg. velocity
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This method implies that Avg. velocity and Backlog size are constant, which (unfortunately) they are not.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Pros of this method&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;easy to calculate&lt;/li&gt;
+  &lt;li&gt;gives a simple single number&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;gives a single number, and we know that they are fundamentally wrong (see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Probabilistic World&lt;/code&gt; section &lt;a href=&quot;/blog/2021-07-25-kanban-metrics&quot;&gt;here&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;doesn’t account for uncertainty and variability (estimation errors, etc.)&lt;/li&gt;
+  &lt;li&gt;doesn’t account for velocity changes (due to tech debt, team dynamics, external dependencies, etc.)&lt;/li&gt;
+  &lt;li&gt;doesn’t account for backlog size changes (bugs, rework, new requirements, change requests, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In real world this approach gives us &lt;strong&gt;50th percentile&lt;/strong&gt; (see &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Good boys - Percentiles&lt;/code&gt; section &lt;a href=&quot;/blog/2021-07-25-kanban-metrics&quot;&gt;here&lt;/a&gt;) at best.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Think about it&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is a 50% probability that we will hit the date. And a 50% probability that it will take longer (maybe by multiple times longer).
+Are you ready to accept this risk?&lt;/p&gt;
+
+&lt;p&gt;We need something better, that can take into account variability in inputs - say hello to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Monte Carlo Simulation Method&lt;/code&gt;!&lt;/p&gt;
+
+&lt;h2 id=&quot;monte-carlo-simulation-method&quot;&gt;Monte Carlo Simulation Method&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Monte Carlo Methods&lt;/strong&gt; -  are a broad class of computational algorithms that rely on &lt;strong&gt;repeated random&lt;/strong&gt; sampling to obtain numerical results.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(c) &lt;a href=&quot;https://en.wikipedia.org/wiki/Monte_Carlo_method&quot;&gt;Wikipedia&lt;/a&gt;. Note: Keywords are &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;repeated&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;random&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Method was developed in the 1940s and gained wide usage in multiple fields: physical sciences, engineering, computer graphics, statistics, etc.&lt;/p&gt;
+
+&lt;p&gt;Monte Carlo Method, in general, consists of the next steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Define possible inputs and their probability distribution&lt;/li&gt;
+  &lt;li&gt;Generate random inputs based on inputs’ probability distribution&lt;/li&gt;
+  &lt;li&gt;Perform a deterministic computation&lt;/li&gt;
+  &lt;li&gt;Aggregate the results&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;inputs&quot;&gt;Inputs&lt;/h3&gt;
+
+&lt;p&gt;In our case &lt;strong&gt;Inputs&lt;/strong&gt; would be our Historical data:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;number of completed user stories per period (week/sprint/etc.)&lt;/li&gt;
+  &lt;li&gt;number of remaining user stories per period&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ouptuts&quot;&gt;Ouptuts&lt;/h3&gt;
+
+&lt;p&gt;Outputs, in our case, would be the range of dates with assigned probabilities of completing a project on a given date or earlier.&lt;/p&gt;
+
+&lt;p&gt;You may ask - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;What will I do with the range of dates?! I need only one date!&lt;/code&gt; - in that case, please, read &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Probabilistic World&lt;/code&gt; section &lt;a href=&quot;/blog/2021-07-25-kanban-metrics&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In short - choose the percentile that is comfortable to you and it will give you a single date.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-08-29-project-forecasting/dr_strange_2.png&quot; alt=&quot;Doctor Strange chooses 100th percentile&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;magic-excel-file&quot;&gt;Magic Excel file&lt;/h2&gt;
+
+&lt;p&gt;Download fully ready Excel file &lt;a href=&quot;https://github.com/FocusedObjective/FocusedObjective.Resources/raw/master/Spreadsheets/Throughput%20Forecaster.xlsx&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Full credits go to amazing &lt;a href=&quot;https://twitter.com/t_magennis&quot;&gt;Troy Magennis&lt;/a&gt; and &lt;a href=&quot;https://www.focusedobjective.com/&quot;&gt;Focused Objective&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-it&quot;&gt;How to use it&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Forecast&lt;/code&gt; tab and fill general information in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Orange&lt;/code&gt; cells (Start date, remaining stories (remember that in typical Software project around 40-80% is ‘dark matter’ so this number should be higher than the actual number of stories in your ticketing system), choose &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Use historical data&lt;/code&gt; instead of an estimate, etc.)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-08-29-project-forecasting/forecast_tab.png&quot; alt=&quot;Forecast tab&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Historical Samples&lt;/code&gt; tab and fill your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Throughput&lt;/code&gt; data in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt; column (ignore &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;B&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-08-29-project-forecasting/hist_samples_tab.png&quot; alt=&quot;Historical Samples tab&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Risks&lt;/code&gt; tab and enter risks that can increase your user stories count (i.e. increase in a number of sales demonstrations, performance issues, etc.)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-08-29-project-forecasting/risks_tab.png&quot; alt=&quot;Risks tab&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Remaining Stories Actuals&lt;/code&gt; and enter the number of remaining stories in backlog (including Work in progress) for each date you have the data.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-08-29-project-forecasting/remaining_tab.png&quot; alt=&quot;Remaining Stories Actials tab&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Again open the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Forecast&lt;/code&gt; tab and use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Results&lt;/code&gt; table to determine project completion date with the acceptable likelihood (general advice: use 85% or higher)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-08-29-project-forecasting/results_tab.png&quot; alt=&quot;Results tab&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PROFIT&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;PS. You can also see some interesting charts on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Charts&lt;/code&gt; tab.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-it-works&quot;&gt;How it works&lt;/h3&gt;
+
+&lt;p&gt;The spreadsheet takes the entered data and randomly selects how many stories you will need to complete based on the range from historical data.
+Then it increases the remaining stories by a random number of split-stories and a random number of risk stories (all based on specified ratios).
+Then it randomly picks some of the historic throughput samples and simulates (500 times) burndowns to project completion.&lt;/p&gt;
+
+&lt;p&gt;Now we have 500 different simulations of our forecast, so we group them by probabilities of completion dates.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-08-29-project-forecasting/dr_strange_1.png&quot; alt=&quot;Doctor Strange simulates project for 500 times&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We have learned a method allowing us to forecast project completion dates which is taking variability into account and provides a much better result than the traditional approach.&lt;/p&gt;
+
+&lt;p&gt;What’s next?&lt;/p&gt;
+
+&lt;p&gt;Do some actions based on this information (or why would you forecast anything?):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;scope actions (limit, exceed)&lt;/li&gt;
+  &lt;li&gt;resource actions (allocate more, free some)&lt;/li&gt;
+  &lt;li&gt;process and tools actions&lt;/li&gt;
+  &lt;li&gt;change agreements with stakeholders on a completion date&lt;/li&gt;
+  &lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;additional-reading-you-may-be-interested-in&quot;&gt;Additional reading you may be interested in&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.reliable-scrum.com&quot;&gt;Reliable Scrum&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Nikolay Provotorov</name></author><category term="Management" /><category term="Project Management" /><category term="Management" /><category term="Metrics" /><category term="Planning" /><category term="Project management" /><summary type="html">The first article in this series is here (Notes on Kanban Metrics)</summary></entry><entry><title type="html">SkyNet is (almost) here. OpenAIs developer AI - Codex</title><link href="http://localhost:4000/openai-codex/" rel="alternate" type="text/html" title="SkyNet is (almost) here. OpenAIs developer AI - Codex" /><published>2021-08-11T00:00:00+03:00</published><updated>2021-08-11T00:00:00+03:00</updated><id>http://localhost:4000/openai-codex</id><content type="html" xml:base="http://localhost:4000/openai-codex/">&lt;p&gt;&lt;img src=&quot;../assets/images/2021-08-11-openai-codex/skynet.jpg&quot; alt=&quot;SkyNet&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-it&quot;&gt;What is it?&lt;/h2&gt;
+
+&lt;p&gt;It is truly amazing and jawbreaking stuff!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://openai.com/blog/openai-codex/&quot;&gt;OpenAI Codex&lt;/a&gt; is an AI system capable of transforming plain English text to real code in several languages (JavaScript, TypeScript, Python, Go, PHP, Perl, Ruby; but Python preferably).&lt;/p&gt;
+
+&lt;p&gt;It is powering &lt;a href=&quot;https://copilot.github.com&quot;&gt;GitHub Copilot&lt;/a&gt; - Visual Studio Code extension that serves the same purpose.&lt;/p&gt;
+
+&lt;p&gt;It is based on released in 2020 GPT-3 language model which generates very well written text in English based on few provided words. It writes so well it is &lt;a href=&quot;https://www.nytimes.com/2020/07/29/opinion/gpt-3-ai-automation.html?&quot;&gt;difficult to recognize&lt;/a&gt; that it is not written by a human.&lt;/p&gt;
+
+&lt;p&gt;And there are some really creepy use cases - like a &lt;a href=&quot;https://www.sfchronicle.com/projects/2021/jessica-simulation-artificial-intelligence/&quot;&gt;simulation of a dead person&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-can-it-do&quot;&gt;What can it do?&lt;/h2&gt;
+
+&lt;p&gt;Say “Hello” with TKinter:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/cLQc-5BJz4g&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Create a Space Game:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Zm9B-DvwOgw&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Replace your Data Scientist:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Ru5fQZ714x8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Provide Jarvis-like interface:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/-Dpl2awseZU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Do your homework:&lt;/p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/fRyTycXMlzA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfallowfullscreenullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;how-to-try-it&quot;&gt;How to try it?&lt;/h2&gt;
+
+&lt;p&gt;Hit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Join the Codex Waitlist&lt;/code&gt; button &lt;a href=&quot;https://openai.com/blog/openai-codex/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;should-i-be-afraid&quot;&gt;Should I be afraid?&lt;/h2&gt;
+
+&lt;p&gt;Ofcourse you should.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/2021-08-11-openai-codex/bender.png&quot; alt=&quot;Kill all humans&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But, look at it from another angle - it can be your partner and your enchancement, and not a replacement.&lt;/p&gt;
+
+&lt;p&gt;GitHub nailed the name - Copilot. You and the AI both solve problems using own strengths and complementing each other.&lt;/p&gt;
+
+&lt;p&gt;In 1980s Steve Jobs said that &lt;a href=&quot;https://www.youtube.com/watch?v=ob_GX50Za6c&quot;&gt;computers are bicycles for our minds&lt;/a&gt; - and I believe that AIs will become new shiny Harleys for our minds.&lt;/p&gt;
+
+&lt;p&gt;We have some good examples of such relationships in sci-fi:&lt;/p&gt;
+
+&lt;p&gt;Jarvis and Iron Man
+&lt;img src=&quot;../assets/images/2021-08-11-openai-codex/jarvis.jpg&quot; alt=&quot;Jarvis and Iron Man&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;or Cortana and Master Chief
+&lt;img src=&quot;../assets/images/2021-08-11-openai-codex/cortana.jpg&quot; alt=&quot;Cortana and Master Chied&quot; /&gt;&lt;/p&gt;</content><author><name>Nikolay Provotorov</name></author><category term="AI" /><category term="AI" /><category term="NLU" /><summary type="html"></summary></entry><entry><title type="html">Notes On Kanban Metrics (Lead time, Cycle time, Throughput)</title><link href="http://localhost:4000/kanban-metrics/" rel="alternate" type="text/html" title="Notes On Kanban Metrics (Lead time, Cycle time, Throughput)" /><published>2021-07-25T00:00:00+03:00</published><updated>2021-07-25T00:00:00+03:00</updated><id>http://localhost:4000/kanban-metrics</id><content type="html" xml:base="http://localhost:4000/kanban-metrics/">&lt;p&gt;Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.&lt;/p&gt;
+
+&lt;p&gt;Second article in this series is here - &lt;a href=&quot;/blog/2021-08-29-project-forecasting&quot;&gt;Project Forecasting&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;kanban-metrics&quot;&gt;Kanban metrics&lt;/h2&gt;
+
+&lt;p&gt;Key kanban metrics that we will discuss in this article:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Lead time&lt;/li&gt;
+  &lt;li&gt;Cycle time&lt;/li&gt;
+  &lt;li&gt;Throughput&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are other metrics that we will not discuss right now, but they can be useful for you:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Work In Progress (WIP)&lt;/li&gt;
+  &lt;li&gt;Cumulative Flow Diagram (CFD)&lt;/li&gt;
+  &lt;li&gt;Flow Efficiency Chart&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;purpose-of-these-metrics-why-do-we-need-them&quot;&gt;Purpose of these metrics (Why do we need them?)&lt;/h2&gt;
+
+&lt;p&gt;We can use these metrics for:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Forecasting feature and/or project completion dates&lt;/li&gt;
+  &lt;li&gt;Setting SLE/SLAs for service&lt;/li&gt;
+  &lt;li&gt;Providing feedback loop for service improvement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;forecasting-feature-andor-project-completion-dates&quot;&gt;Forecasting feature and/or project completion dates&lt;/h3&gt;
+
+&lt;p&gt;Why forecast something? To do something about it! (c)&lt;/p&gt;
+
+&lt;p&gt;E.g.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;decide when to start a request to deliver it on time - according to SLEs/Committed date/etc.&lt;/li&gt;
+  &lt;li&gt;change the resource allocation for project or feature&lt;/li&gt;
+  &lt;li&gt;make decisions about the project’s scope&lt;/li&gt;
+  &lt;li&gt;prioritize work&lt;/li&gt;
+  &lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you measure something and not doing anything as a result of your measurement - this is most likely a &lt;a href=&quot;https://en.wikipedia.org/wiki/Muda_(Japanese_term)&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Muda&lt;/code&gt;&lt;/a&gt; or &lt;em&gt;waste&lt;/em&gt;.
+You should stop wasting time on this measurement or start using this data in your decisions and actions.&lt;/p&gt;
+
+&lt;h3 id=&quot;setting-sleslas-for-service&quot;&gt;Setting SLE/SLAs for service&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLA&lt;/code&gt; - Service Level Agreement. The Agreement you make with your clients.
+The Keyword is &lt;strong&gt;Agreement&lt;/strong&gt;. The Client must &lt;strong&gt;agree&lt;/strong&gt; with you (typically through a legal contract).&lt;/p&gt;
+
+&lt;p&gt;If you just say to your internal customer &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Our lead time is X. Deal with it&lt;/code&gt; - this is not an agreement :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/deal-with-it.jpg&quot; alt=&quot;Deal with it&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Most of the time this term is used for external clients and SLAs violation will result in a fine.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLE&lt;/code&gt; - Service Level Expectations is a ‘soft’ kind of SLA used to move away from promises and strict legal commitments to more adaptive and realistic expectations.&lt;/p&gt;
+
+&lt;p&gt;For internal services we will mostly set SLEs and not SLAs and set them based on actual numbers.&lt;/p&gt;
+
+&lt;p&gt;Other SLX terms for reference:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SLO - Service Level Objective. The Objective team must hit&lt;/li&gt;
+  &lt;li&gt;SLI - Service Level Indicators. The actual metrics of performance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;providing-feedback-loop-for-service-improvement&quot;&gt;Providing feedback loop for service improvement&lt;/h3&gt;
+
+&lt;p&gt;We can use these metrics in our &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Service Delivery Reviews&lt;/code&gt; (standard Kanban cadence) to see how our changes in processes and tools affect our service as a system.&lt;/p&gt;
+
+&lt;h3 id=&quot;beware-goodharts-law&quot;&gt;Beware: Goodhart’s law&lt;/h3&gt;
+
+&lt;p&gt;There is a big temptation to use these metrics as KPIs, but you shouldn’t do this.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Goodhart%27s_law&quot;&gt;Goodhart’s Law&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And it’s generalization by Marilyn Strathern:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;When a measure becomes a target, it ceases to be a good measure.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In short: avoid setting KPIs based on these metrics - they will be abused and you will lose them as indicators.&lt;/p&gt;
+
+&lt;p&gt;E.g. how to reduce cycle time by two times?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Do work faster&lt;/li&gt;
+  &lt;li&gt;or reduce the work item size, so it will go through the system faster&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;which way would be easier for the team?&lt;/p&gt;
+
+&lt;h3 id=&quot;lead-time-in-kanban&quot;&gt;Lead Time in Kanban&lt;/h3&gt;
+
+&lt;h4 id=&quot;what-is-it-for&quot;&gt;What is it for?&lt;/h4&gt;
+
+&lt;p&gt;Answers a simple question: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How long will this take?&lt;/code&gt;
+&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/estimate-your-work.jpg&quot; alt=&quot;How long will this take&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wait, but we already ask our devs that question, why do we need another metric for this?&lt;/p&gt;
+
+&lt;p&gt;Let’s see - developer estimates some work item as 8 hrs, but customer gets it delivered  after 2 weeks (because work was sitting in a backlog for 2 days, there were some dependencies, testing, rework, documentation, deployment, etc.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/estimates-mr-dev.jpg&quot; alt=&quot;Estimates Mr.Developer&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WTF?!&lt;/code&gt; says the customer :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/wtf.png&quot; alt=&quot;WTF&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So developer’s estimates make almost no sense and no value in case of our question &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How long will this take?&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Customer wants to know when he will get the final result and not how long a developer will write code - and the answer to this question is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/estimates-deadlines.jpg&quot; alt=&quot;Estimates as deadlines&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But there are more deep questions to this: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;When it should be delivered?&lt;/code&gt; –&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;When we should commit to it?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So this metric also answers the question - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;When we must commit to this work to finish it on time?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Despite the simplicity of the question, this is a little confusing metric, because you need to agree on what it means :)&lt;/p&gt;
+
+&lt;p&gt;The most used meanings of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Customer Lead Time&lt;/code&gt; - the time between a request being &lt;strong&gt;made&lt;/strong&gt; by the customer and its delivery (includes everything happening between these points, so this is the biggest value)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;System Lead Time&lt;/code&gt; - the time between a request being formally &lt;strong&gt;accepted&lt;/strong&gt; (or &lt;strong&gt;committed&lt;/strong&gt;) by the team and its delivery to some ‘done’ column, which is usually the first column, that doesn’t have a WIP limit on it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The second definition is more popular in Software development, so we will use it for the article.&lt;/p&gt;
+
+&lt;p&gt;In this case teams have a WIP-limited column, usually ‘Dev Ready’/’Engineering ready’/’Committed’ which acts as a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;committment point&lt;/code&gt;. Any work pulled in this column will start its &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; timer.&lt;/p&gt;
+
+&lt;p&gt;Also usually teams have some ‘precommitment’ column (e.g. ‘Pre-Analysis’) where they gather more information on work to be done to ensure dependencies are met, reduce risks, etc.&lt;/p&gt;
+
+&lt;p&gt;The reason for this kind of measurement is to support the maximum delay decision - we need to do &lt;strong&gt;what&lt;/strong&gt; we must do and &lt;strong&gt;when&lt;/strong&gt; we must do (not early and not late - Just In Time). And in Software development most of the kanban systems doesn’t have a requirement to deliver ALL of the requests - only the most valuable ones, so any work can sit and wait in a backlog waiting for its time and thus increasing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Customer Lead Time&lt;/code&gt; indefinitely, so we need another metric :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/kanban-times.png&quot; alt=&quot;Kanban Lead and Cycle time&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-calculate-lead-time&quot;&gt;How to calculate Lead Time?&lt;/h4&gt;
+
+&lt;p&gt;Just start writing down &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Committment date&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Done date&lt;/code&gt; (most of task trackers already doing this you just need to learn how to get this information).&lt;/p&gt;
+
+&lt;p&gt;Then,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;System Lead Time = Done date - Committment date
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;cycle-time-in-kanban&quot;&gt;Cycle Time in Kanban&lt;/h3&gt;
+
+&lt;h4 id=&quot;what-is-it-for-1&quot;&gt;What is it for?&lt;/h4&gt;
+
+&lt;p&gt;First Question: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;When it will be done if you start it right now?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Second question: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;When we must start it to finish before the expected delivery date?&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And again you need to clearly define what &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; means in your case.&lt;/p&gt;
+
+&lt;p&gt;Most of the time it has these meanings:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; - the time between work is being started by someone and its delivery date&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Local Cycle Time&lt;/code&gt; - the time it takes for a work to pass through some phase of kanban system (e.g. from column A to column B, from Development to Deployment, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;how-to-calculate-cycle-time&quot;&gt;How to calculate Cycle Time?&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cycle Time = Done date - Started date
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;lead-time-vs-cycle-time-in-kanban&quot;&gt;Lead Time vs Cycle Time in Kanban&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; is what &lt;strong&gt;customers&lt;/strong&gt; perceives. They don’t care if you have very fast &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt;, but &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; is big (and the term ‘big’ is also relative to the customer). So improvements should be focused on it.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; is what &lt;strong&gt;team&lt;/strong&gt; mostly perceives and controls.&lt;/p&gt;
+
+&lt;h3 id=&quot;throughput-in-kanban&quot;&gt;Throughput in Kanban&lt;/h3&gt;
+
+&lt;h4 id=&quot;what-is-it-for-2&quot;&gt;What is it for?&lt;/h4&gt;
+
+&lt;p&gt;Answers question: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How many work items we will deliver in some period?&lt;/code&gt;, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How many work items we will deliver in a month?&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;how-to-calculate-throughput&quot;&gt;How to calculate Throughput?&lt;/h4&gt;
+
+&lt;p&gt;Calculate the amount of work items delivered weekly, write it down, calculate monthly and other periods as needed.&lt;/p&gt;
+
+&lt;h2 id=&quot;probabilistic-world&quot;&gt;Probabilistic world&lt;/h2&gt;
+
+&lt;p&gt;And here comes inconvenient truth - we live in a probabilistic world and we do complex work with a high degree of uncertainty, so we actually can’t use simple discrete numbers to predict the future.&lt;/p&gt;
+
+&lt;p&gt;This is a very tough topic for managers as they often just refuse to accept it despite what actual numbers are saying.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/joker.jpg&quot; alt=&quot;Probability math&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sad, but true.&lt;/p&gt;
+
+&lt;h3 id=&quot;distributions&quot;&gt;Distributions&lt;/h3&gt;
+
+&lt;p&gt;We should go to distributions for help.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/loki.jpg&quot; alt=&quot;Desperate distributions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt;, etc. are not single numbers - they are &lt;a href=&quot;https://en.wikipedia.org/wiki/Probability_distribution&quot;&gt;distributions&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;And to make things even more complicated - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; are NOT normal(bell-curved) distributions.&lt;/p&gt;
+
+&lt;p&gt;To get the value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; we need to decide on the level of uncertainty that we agree to accept (choose a percentile).&lt;/p&gt;
+
+&lt;p&gt;So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Our Lead Time is 10 days&lt;/code&gt; becomes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;With 95% probability our Lead Time is 15 days or less. Or with 80% probability 5 days or less. Choose what you like.&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;And we really should avoid using mode and average values for these metrics.&lt;/p&gt;
+
+&lt;h4 id=&quot;lead-time-and-cycle-time-distributions&quot;&gt;Lead Time and Cycle Time distributions&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/inside-lead-time-distribution-chart-with-license.png&quot; alt=&quot;Lead and Cycle Time distributions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a common &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; distribution shape, in fact, it is often described by a named distribution - &lt;a href=&quot;https://en.wikipedia.org/wiki/Weibull_distribution&quot;&gt;Weibull distribution&lt;/a&gt; with different shape parameters.&lt;/p&gt;
+
+&lt;p&gt;The left part of this distribution is limited, while the right (tail) is not. Which is a very sad thing for any Project Manager.&lt;/p&gt;
+
+&lt;p&gt;Distribution may differ for different work types and classes of service and you can (and should) also calculate them distinctly.&lt;/p&gt;
+
+&lt;p&gt;If we have a long tail - we should investigate and try to narrow it or extract features (type of work, class of service, etc.) to improve predictability.&lt;/p&gt;
+
+&lt;h5 id=&quot;how-to-create-a-chart-like-this&quot;&gt;How to create a chart like this?&lt;/h5&gt;
+
+&lt;p&gt;Just make a histogram from your data (Cycle time, Lead time, etc.)&lt;/p&gt;
+
+&lt;h5 id=&quot;how-much-data-do-you-need-to-plot-this&quot;&gt;How much data do you need to plot this?&lt;/h5&gt;
+
+&lt;p&gt;More is better, but 10-12 data points should be enough (according to &lt;a href=&quot;https://www.youtube.com/watch?v=rNotEf40qUU&quot;&gt;Troy Magennis&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h3 id=&quot;why-averages-are-bad&quot;&gt;Why Averages are bad&lt;/h3&gt;
+
+&lt;p&gt;Averages are useful when we have a normal or bell-shaped distribution, but they become misleading when we have a skewed distribution, like a Weibull.&lt;/p&gt;
+
+&lt;p&gt;See the picture above - the average has less than 63% probability, so in slightly less than a half of the times work will take MORE than average, and not simply more, but more by multiple times. Using this average to forecast project completion or setting SLA can lead to a disaster.&lt;/p&gt;
+
+&lt;p&gt;But, you can use averages for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; to observe their trends.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Throughput&lt;/code&gt; metric most likely will have a normal distribution, so you can use an average in that case.&lt;/p&gt;
+
+&lt;h3 id=&quot;beware-of-mode&quot;&gt;Beware of Mode&lt;/h3&gt;
+
+&lt;p&gt;The mode is the most often occurring number in the data set (the ‘peak’ in distribution). It is easily remembered by humans (&lt;strong&gt;oh, the peak is X! so I will think it will take X days on average…&lt;/strong&gt;), but again see the picture above - it has LESS than 50% probability (according to Alexey Zhiglov it is between 18%-28% in product development).&lt;/p&gt;
+
+&lt;p&gt;Beware to use it for forecasting.&lt;/p&gt;
+
+&lt;h3 id=&quot;good-boys---percentiles&quot;&gt;Good boys - Percentiles&lt;/h3&gt;
+
+&lt;p&gt;We should use percentiles to establish SLEs.&lt;/p&gt;
+
+&lt;p&gt;The most used percentiles are (note how big the difference in Lead Times for them will be): 80th, 85th, 90th, 95th, 98th, 99th.&lt;/p&gt;
+
+&lt;p&gt;E.g. we have a Lead Time of&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;10 days at 80th percentile&lt;/li&gt;
+  &lt;li&gt;20 days at 99th percentile&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This means that with a probability of 80% we will deliver work in 10 days or less, but if we want a guaranteed date (99th percentile) we will set an expectation to 20 days or less.&lt;/p&gt;
+
+&lt;p&gt;It is a good practice to establish different SLE/SLA based on type of work and/or class of service to improve predictability.&lt;/p&gt;
+
+&lt;p&gt;Examples (numbers are arbitrary):&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Work type&lt;/th&gt;
+      &lt;th&gt;99%&lt;/th&gt;
+      &lt;th&gt;80%&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;New feature&lt;/td&gt;
+      &lt;td&gt;15d&lt;/td&gt;
+      &lt;td&gt;3d&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bug&lt;/td&gt;
+      &lt;td&gt;7d&lt;/td&gt;
+      &lt;td&gt;2d&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Change Request&lt;/td&gt;
+      &lt;td&gt;10d&lt;/td&gt;
+      &lt;td&gt;4d&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Customers/Managers can choose what level of risk to accept.&lt;/p&gt;
+
+&lt;h2 id=&quot;example-kanban-metrics-dashboard&quot;&gt;Example Kanban Metrics Dashboard&lt;/h2&gt;
+
+&lt;p&gt;For one of our teams we use this basic dashboard that we update weekly:
+&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/metrics-dashboard.png&quot; alt=&quot;Metrics dashboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;following by snapshot of current metrics distributions like this:
+&lt;img src=&quot;/assets/images/2021-07-25-kanban-metrics/distribution-example.png&quot; alt=&quot;Example Cycle Time distribution&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;are-my-lead-time-distributions-good-for-forecasting&quot;&gt;Are my Lead Time distributions good for forecasting?&lt;/h2&gt;
+
+&lt;p&gt;There are two types of distributions in terms of their fittnes for forecasting:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fat-tailed&lt;/li&gt;
+  &lt;li&gt;Thin-tailed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As the name implies, Fat-tailed distribution has a looong, ‘fat’ tail which results in bad process predictability and thus should be used for forecasting with caution.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, Thin-tailed distribution, has a short tail and can be used to forecast future results.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-can-we-distinguish-between-them&quot;&gt;How can we distinguish between them?&lt;/h3&gt;
+
+&lt;p&gt;It’s easy - we must find how the 98th percentile relates to the Median (50th percentile).&lt;/p&gt;
+
+&lt;p&gt;If it is more than &lt;strong&gt;5.6&lt;/strong&gt;, then it is Fat-tailed distribution.&lt;/p&gt;
+
+&lt;p&gt;If it is less than &lt;strong&gt;5.6&lt;/strong&gt;, then it is Thin-tailed distribution.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-should-we-do-with-fat-tailed-distributions&quot;&gt;What should we do with Fat-tailed distributions?&lt;/h3&gt;
+
+&lt;p&gt;We need to find a way to trim this tail:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You may have multimodal data in your Lead Time and you should try to extract it to separate datasets based on Class of Service, Type of Work, etc. which can result in several more thin-tailed distributions&lt;/li&gt;
+  &lt;li&gt;Do some analysis on tasks with longest Lead Times to determine what caused them to find a way to mitigate such issues in future&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sidenote-do-we-need-estimates&quot;&gt;Sidenote: Do we need estimates?&lt;/h2&gt;
+
+&lt;p&gt;It depends.&lt;/p&gt;
+
+&lt;p&gt;The purpose of estimation is to support decisions.
+If an estimate doesn’t help make a decision, then it doesn’t have any value.
+If an estimate does not lead to any decision or change in the system and knowledge of the estimate does not give you some value for prioritization (e.g. cost of delay) - it is a waste.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Consider gathering at least these metrics:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Averages of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Throughput&lt;/code&gt; to discover their trends&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt; distributions and their 80/90/95th percentiles to set SLEs and forecast&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Using these metrics we can answer very important questions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When we must commit to particular work to deliver it on time? (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;How long does it take to deliver a work item? (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lead Time&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;How long do we actually deliver a work item? (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Time&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;What amount of work we can deliver in a month? (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Throughput&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can predict the future based on previous performance, but only with probabilities attached.&lt;/p&gt;
+
+&lt;p&gt;Also, keep in mind - these predictions work well for single pieces of work, but will not work as good for whole projects as they will accumulate uncertainty - there are other technics for this (mostly the Monte Carlo method) and we will look into it in another article - &lt;a href=&quot;/blog/2021-08-29-project-forecasting&quot;&gt;Project Forecasting&lt;/a&gt;.&lt;/p&gt;</content><author><name>Nikolay Provotorov</name></author><category term="Management" /><category term="Kanban" /><category term="Management" /><category term="Metrics" /><summary type="html">Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.</summary></entry><entry><title type="html">C# 9 Record type</title><link href="http://localhost:4000/csharp-9-records/" rel="alternate" type="text/html" title="C# 9 Record type" /><published>2021-07-03T00:00:00+03:00</published><updated>2021-07-03T00:00:00+03:00</updated><id>http://localhost:4000/csharp-9-records</id><content type="html" xml:base="http://localhost:4000/csharp-9-records/">&lt;h2 id=&quot;when-i-should-consider-using-record&quot;&gt;When I should consider using record?&lt;/h2&gt;
+
+&lt;p&gt;You want:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;reference type, but the comparison should be based on values of properties&lt;/li&gt;
+  &lt;li&gt;immutable entity. Usage of immutable entities is widely recommended as it increases the application’s behavior predictability and reduces the number of bugs and issues&lt;/li&gt;
+  &lt;li&gt;support for inheritance hierarchies&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;TLDR&lt;/strong&gt;: you want to store immutable data, preserving the ability to pass instances by reference.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-it&quot;&gt;How to use it?&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt; type is available starting with .NET 5 and C# 9.0.&lt;/p&gt;
+
+&lt;h3 id=&quot;declaring-records-records&quot;&gt;Declaring records records&lt;/h3&gt;
+
+&lt;p&gt;You can declare &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt; using positional constructor:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;record&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;decimal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;or more traditional syntax:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;record&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Vehicle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// technically, you can&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// declare it as { get;set; }&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;decimal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// but don't do it :)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;or you can declare standard properties in addition to positionals:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;record&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CarWithMileage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;decimal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Mileage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;using-records&quot;&gt;Using records&lt;/h3&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// create new instance&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tesla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Model S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50000.00&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// you can do like this&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;otherCar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Ford&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Explorer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;60000.0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;or like this, if you don’t have positional properties:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Vehicle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Vehicle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Toyota&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Camry&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25000.0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;or like this if you have positional and standard properties:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;carWithMileage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;CarWithMileage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;VAZ&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;2109&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100.0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Mileage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;340000&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;record-comparison&quot;&gt;Record comparison&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt;s are compared by values:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tesla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Model S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50000.00&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sameCar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tesla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Model S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50000.00&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sameCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/dotnet-records/same_pic.jpg&quot; alt=&quot;same picture meme&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For comparison repeat this with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; type:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ClassCar&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ClassCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manufacturer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;decimal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manufacturer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;decimal&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;classCar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ClassCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tesla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Model S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50000.00&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sameClassCar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ClassCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tesla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Model S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50000.00&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;classCar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sameClassCar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;mutating-records-or-editing-them&quot;&gt;Mutating records (or editing them)&lt;/h2&gt;
+
+&lt;p&gt;So, how do you mutate the immutable?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/dotnet-records/mutate.jpg&quot; alt=&quot;mutate the immutable&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You should use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;with&lt;/code&gt; expression to make a new &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt; instance based on existing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt; with some modifications - this is called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nondestructive mutation&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Tesla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Model S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50000.0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;carWithDiscount&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;45000.0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Car { Manufacturer = Tesla, Model = Model S, Price = 50000.0 }&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;WriteLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;carWithDiscount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Car { Manufacturer = Tesla, Model = Model S, Price = 45000.0 }&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Note: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;with&lt;/code&gt; makes a shallow copy - reference properties will reference the same object as they were in original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;JavaScript users use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;spread syntax&lt;/code&gt; to achieve the same thing:&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;updatedObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oldObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;someProperty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;new value&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;nice-features&quot;&gt;Nice features&lt;/h2&gt;
+
+&lt;h3 id=&quot;record-inheritance&quot;&gt;Record inheritance&lt;/h3&gt;
+
+&lt;p&gt;Just works. But only for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt;s - you can’t inherit &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt;.
+If you want to compare &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt;s both instances should be of the same run-time type or they will be considered non-equal without comparing their properties.&lt;/p&gt;
+
+&lt;h3 id=&quot;tostring-formatting&quot;&gt;ToString() Formatting&lt;/h3&gt;
+
+&lt;p&gt;ToString method returns human readable data:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Manufacturer&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Tesla&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50000.0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can customize this by providing own &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PrintMembers&lt;/code&gt; method (see &lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/records#define-compiler-synthesized-methods&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h3 id=&quot;deconstruction&quot;&gt;Deconstruction&lt;/h3&gt;
+
+&lt;p&gt;Have you ever envied JavaScript programmers because they could do this?&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;is_verified&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is_verified&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// destructuring&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 42&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_verified&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Example from &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#object_destructuring&quot;&gt;Mozilla&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you can do this:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;manufacturer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But this only works with positional properties - for standard properties you will need to provide &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Deconstruct&lt;/code&gt; method (see &lt;a href=&quot;https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct#user-defined-types&quot;&gt;here&lt;/a&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Deconstruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;something&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;otherthing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;performance&quot;&gt;Performance&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt;s value equality works measurably faster than struct’s one.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-choose-between-class-struct-record-class-vs-record&quot;&gt;How to choose between class, struct, record (class vs record)&lt;/h2&gt;
+
+&lt;p&gt;Use&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; - if you want reference types, supporting hierarchies and focusing on class’ responsibility and behavoir&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt; - if you want immutable reference types, supporting hierarchies and focusing on storing data&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;struct&lt;/code&gt; - if you want just to store some data and don’t need anything above&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;records-and-entity-framework-core&quot;&gt;Records and Entity Framework Core&lt;/h2&gt;
+
+&lt;p&gt;With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EFCore&lt;/code&gt; you will need some additional actions to update a record:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;report&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dbContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MyReport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;AsNoTracking&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;First&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;some&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linq&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;updatedReport&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;report&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ReadyToUse&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dbContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;updatedRecord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dbContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;SaveChanges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;via RenierGlez@&lt;a href=&quot;https://stackoverflow.com/a/65868071&quot;&gt;StackOverflow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h2&gt;
+
+&lt;p&gt;Compiler generates &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; and augments it with some synthesized methods and overrides:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Object.Equals(Object)&lt;/li&gt;
+  &lt;li&gt;virtual Equals(T)&lt;/li&gt;
+  &lt;li&gt;Object.GetHashCode()&lt;/li&gt;
+  &lt;li&gt;operator== and operator!=&lt;/li&gt;
+  &lt;li&gt;implements &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;System.IEquatable&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;ToString()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;with&lt;/code&gt; expression compiler generates a clone method and a copy constructor.&lt;/p&gt;
+
+&lt;p&gt;Here are some IL code for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car&lt;/code&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;record&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-csharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// so it's a class&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* 02000006 */&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;auto&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ansi&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;beforefieldinit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RecordExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Runtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Runtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IEquatable&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RecordExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ToString implementation&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* 0600000F */&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hidebysig&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;virtual&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ToString&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cil&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;managed&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Clone method&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* 06000016 */&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hidebysig&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newslot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;virtual&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RecordExample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Car&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Clone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cil&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;managed&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Nikolay Provotorov</name></author><category term="Development" /><category term="dotNET" /><category term="CSharp" /><summary type="html">When I should consider using record?</summary></entry><entry><title type="html">dotNET Hot Reload is Awesome</title><link href="http://localhost:4000/dotnet-hot-reload/" rel="alternate" type="text/html" title="dotNET Hot Reload is Awesome" /><published>2021-07-01T00:00:00+03:00</published><updated>2021-07-01T00:00:00+03:00</updated><id>http://localhost:4000/dotnet-hot-reload</id><content type="html" xml:base="http://localhost:4000/dotnet-hot-reload/">&lt;h2 id=&quot;why-do-i-need-it&quot;&gt;Why do I need it?&lt;/h2&gt;
+
+&lt;p&gt;Ever done something like this?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Build your app&lt;/li&gt;
+  &lt;li&gt;Wait for it to start&lt;/li&gt;
+  &lt;li&gt;Recognize that you need to change something&lt;/li&gt;
+  &lt;li&gt;Stop your app&lt;/li&gt;
+  &lt;li&gt;Change the code&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GOTO 1&lt;/code&gt; and wait again and again&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET 6&lt;/code&gt; you can do this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Build your app&lt;/li&gt;
+  &lt;li&gt;Wait for it to start&lt;/li&gt;
+  &lt;li&gt;Recognize that you need to change something&lt;/li&gt;
+  &lt;li&gt;Change the code&lt;/li&gt;
+  &lt;li&gt;Immediately see the result&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No more rebuilding and restarting for every little change.&lt;/p&gt;
+
+&lt;p&gt;That makes the developer’s inner loop faster by reducing the time between code change and seeing the result.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: some other languages had this feature for YEARS.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-net-hot-reload&quot;&gt;What is .NET Hot Reload?&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dotnet/core/issues/5510&quot;&gt;Improve inner-loop performance for .NET developers&lt;/a&gt; is one of the main themes for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET 6&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This theme aims at two goals:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Improving developer’s inner loop and boosting productivity&lt;/li&gt;
+  &lt;li&gt;Attracting developers from other platforms. Since most of them already have hot reloading, the absence of it in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET&lt;/code&gt; is a blocker for switching.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET Hot Reload&lt;/code&gt; watches your source files and applies supported code changes to your running app without restarting it. Application state also preserved.
+Unsupported changes (see Limitations section) will lead to rebuild and restart.&lt;/p&gt;
+
+&lt;p&gt;Internaly &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET Hot Reload&lt;/code&gt; uses &lt;a href=&quot;https://github.com/dotnet/roslyn/blob/main/docs/wiki/EnC-Supported-Edits.md&quot;&gt;Roslyn Edit&amp;amp;Continue&lt;/a&gt; feature.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-do-i-use-it&quot;&gt;How do I use it?&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-you-need&quot;&gt;What you need&lt;/h3&gt;
+
+&lt;p&gt;You will need &lt;a href=&quot;https://dotnet.microsoft.com/download/dotnet/6.0&quot;&gt;.NET 6.0&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Visual Studio 2019 v.16.11 Preview 1+&lt;/code&gt; or&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET 6 Preview 4+&lt;/code&gt; if you plan to use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Visual Studio Code&lt;/code&gt; or other IDE through the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet watch&lt;/code&gt; command&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;how-to-use-with-visual-studio-2019&quot;&gt;How to use with Visual Studio 2019&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run your app&lt;/li&gt;
+  &lt;li&gt;Make &lt;em&gt;supported&lt;/em&gt;(see Limitations section) code change&lt;/li&gt;
+  &lt;li&gt;Press the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Apply code changes&lt;/code&gt; button&lt;/li&gt;
+  &lt;li&gt;PROFIT! You will see changes when updated code is re-executed&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;how-to-use-vs-code-or-other-ide&quot;&gt;How to use VS Code (or other IDE)&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run your favorite &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Terminal&lt;/code&gt; app&lt;/li&gt;
+  &lt;li&gt;Go to your project directory&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dotnet watch&lt;/code&gt; - it should indicate that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Hot reload enabled&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Make &lt;em&gt;supported&lt;/em&gt; code change and Save the file&lt;/li&gt;
+  &lt;li&gt;Wait a little :)&lt;/li&gt;
+  &lt;li&gt;ROFIT! You will see changes when updated code is re-executed&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/dotnet-hot-reload/dotnet-hot-reload-sc1.png&quot; alt=&quot;Hot Reload Enabled&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-the-limitations&quot;&gt;What are the Limitations?&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-types-of-applications-support-net-hot-reload&quot;&gt;What types of applications support .NET Hot Reload&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET Hot Reload&lt;/code&gt; will work with (it may not correctly work right now, but it will at final release on November’21):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;WPF&lt;/li&gt;
+  &lt;li&gt;Windows Forms&lt;/li&gt;
+  &lt;li&gt;.NET MAUI&lt;/li&gt;
+  &lt;li&gt;ASP.NET Core (including Blazor, Razor pages, MVC)&lt;/li&gt;
+  &lt;li&gt;Console apps&lt;/li&gt;
+  &lt;li&gt;and maybe something else&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-changes-are-supported&quot;&gt;What changes are &lt;em&gt;supported&lt;/em&gt;&lt;/h3&gt;
+
+&lt;p&gt;Not all changes are supported.&lt;/p&gt;
+
+&lt;p&gt;Documentation is still in progress, but you can read &lt;a href=&quot;https://github.com/dotnet/roslyn/blob/main/docs/wiki/EnC-Supported-Edits.md&quot;&gt;Edit&amp;amp;Continue Roslyn docs&lt;/a&gt; and &lt;a href=&quot;https://docs.microsoft.com/en-gb/visualstudio/debugger/supported-code-changes-csharp?view=vs-2019&quot;&gt;E&amp;amp;C in Visual Studio&lt;/a&gt; for the current list of supported edits.&lt;/p&gt;
+
+&lt;h2 id=&quot;when-can-i-use-it-in-production&quot;&gt;When can I use it in Production?&lt;/h2&gt;
+
+&lt;p&gt;You can start immediately - the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bing&lt;/code&gt; team &lt;a href=&quot;https://devblogs.microsoft.com/dotnet/migration-of-bings-workflow-engine-to-net-5/&quot;&gt;uses&lt;/a&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET 6&lt;/code&gt; in Production since &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preview 1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Or you can wait for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.NET 6 Release&lt;/code&gt; - &lt;strong&gt;November 2021&lt;/strong&gt;.&lt;/p&gt;</content><author><name>Nikolay Provotorov</name></author><category term="Development" /><category term="dotNET" /><category term="ASP.NET Core" /><category term="Inner loop" /><summary type="html">Why do I need it?</summary></entry><entry><title type="html">Short Tips on Creating and Managing Remote Software Development Team</title><link href="http://localhost:4000/short-tips-on-creating-and-managing-remote-software-development-teams/" rel="alternate" type="text/html" title="Short Tips on Creating and Managing Remote Software Development Team" /><published>2020-02-20T00:00:00+03:00</published><updated>2020-02-20T00:00:00+03:00</updated><id>http://localhost:4000/short-tips-on-creating-and-managing-remote-software-development-teams</id><content type="html" xml:base="http://localhost:4000/short-tips-on-creating-and-managing-remote-software-development-teams/">&lt;p&gt;We will skip the part about why do you do it (remote teams) and get straight to the point. Below are some short tips (derived from my experience, you can agree or disagree with it — it’s OK, this is strictly my opinion) to keep in mind when you are deciding, creating or dealing with remote software development teams.&lt;/p&gt;
+
+&lt;h2 id=&quot;my-experience-in-the-topic&quot;&gt;My experience in the topic&lt;/h2&gt;
+
+&lt;p&gt;I have 5+ years of experience working with two remote (aside from HQ) offices (5 to 12 people each) and around 15–20 completely remote workers from different regions and timezones scattered across two countries (~5000km between the most western and eastern employee :P ).&lt;/p&gt;
+
+&lt;p&gt;Tips below will work as-is for smaller companies and, I’m sure, will still be mostly valid for much bigger companies.&lt;/p&gt;
+
+&lt;p&gt;Not everything on the list we do perfectly and in every team and project, but we are working on it to become better.&lt;/p&gt;
+
+&lt;h2 id=&quot;remote-office-setup-ignore-this-if-you-are-hiring-remote-workers-without-the-office&quot;&gt;Remote Office setup (ignore this if you are hiring remote workers without the office)&lt;/h2&gt;
+
+&lt;p&gt;Here are some points to remember if you are going to open a new Remote Office:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Geography&lt;/strong&gt; — choose it wisely. You should know in advance who are your candidates, how many there are, where will they come from, how you will attract them, how will you keep them, who are your competitors on this market and so on. Apart from this, you should spend some time thinking about logistics (sending documents, buying/repairing equipment, furniture, etc.)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Conference&lt;/strong&gt; rooms — you need them. At least one. They work for big meetings and private matters. Of course, you will need a whiteboard (more is better), TV, camera and speakerphone there.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Trusted leader&lt;/strong&gt; — you could do without him, but with him, it would be 10 times easier, faster and better. It would be best if he shares your core values and principles and worked with you in HQ for some time (to share your culture and be able to spread it in the new office).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Periodic Top-management visits&lt;/strong&gt; — Again, you could live without it, but these visits serve two things: 1) they show your employees that they really matter and top-management knows and cares about them 2) gives top-management first-hand information about how are things really going “on the ground”.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Team purchase&lt;/strong&gt; — you should consider purchasing a ready-made team (at least 3 people) on the market and opening a new office on their base. This will speed up things, but it also can complicate culture integration and communications (if this team will try to isolate itself, and most teams will).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;hiring&quot;&gt;Hiring&lt;/h2&gt;
+
+&lt;p&gt;Precise hiring becomes much more important with remote workers as you could not see a miss as soon as you could do it if a person is sitting near you.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Interview with Team Lead and/or Manager&lt;/strong&gt; — this is a must. You should check the “compatibility” of a new developer with his Team Lead and/or manager. Don’t hire if TL says that this was a good guy/girl and we should hire him, but “not in my team”.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Interview with the camera&lt;/strong&gt; — you could skip it, but it makes things much easier. Non-verbal signals are important and you should try to see your candidates in live conversation before you hire someone.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Previous experience in remote work&lt;/strong&gt; — it would be best if a candidate has already worked remotely. Not everyone can work like this.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Timezones&lt;/strong&gt; — you should choose what timezones are acceptable for you. We are most comfortable with ±2 (and ±4 max) hours from HQ time, but it could differ greatly depending on your specifics. You should be clear on this topic in the interview.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Region specifics&lt;/strong&gt; — some regions have their own working culture that will influence a candidate’s performance — in some regions, there are mostly fast and furious candidates and in some are mostly slow and meditative candidates, the same picture with reliability, etc. From experience, we have calculated some regions where we try to avoid hiring people.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Region hiring specifics&lt;/strong&gt; — e.g. in some regions there is no “open” market for developers — they choose a new company completely by word of mouth, or based on where they relatives or friends work and so on, so you can’t use hiring sites or ads there. This specifics could render useless your hiring strategy — so keep it in mind.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Check core values&lt;/strong&gt; — very important. You should check every candidate (local or remote) if their core values are aligned with yours, but with remote workers, you should double-check it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Good communication skills&lt;/strong&gt; — very important. Both written and spoken. Twice as important as for the local staff.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Finally — Don’t hire if you are not sure&lt;/strong&gt; (this tip becomes less relevant for big companies as they can live through this kind of errors with much less damage, but for small companies, it can be deadly).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;onboarding&quot;&gt;Onboarding&lt;/h2&gt;
+
+&lt;p&gt;You should learn how to onboard new employees fast, efficient and with the predictable result.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Onboarding process&lt;/strong&gt; — you should have one. It could be short and simple or it could be a boot camp in the jungle, but it should be in place. Every new employee should go through it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mentor&lt;/strong&gt; — a must. You should assign a mentor for every new employee, that will supervise and advise a newcomer in the first few months (in our case mentors are mostly Team Leads).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Formal Probation expectation&lt;/strong&gt; — very important. For every role you hire, you should have some template with formal expectations from the person during the Probation period (like what he should know, do/not do, demonstrate, deliver, etc. at the end of the Probation). You should tailor it to the concrete employee and have regular talks with them on their progress in achieving these expectations. Mentors should lead this.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Local assimilation&lt;/strong&gt; — ideally if newcomers can work for some time (first weeks, better months) in HQ to make connections and soak up your culture. Not always possible, but worth it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;infrastructure&quot;&gt;Infrastructure&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Remote access to infrastructure, services, environments, etc.&lt;/strong&gt; — no access, no work :) You should be ready for it with some typical procedures to grant required access for newcomers (VPN, accounts, roles, permissions and so on).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Information security&lt;/strong&gt; — with remote workers the attack surface becomes much higher — you should think about how you will protect and audit your data, services, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tools-and-software&quot;&gt;Tools and Software&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Software licences&lt;/strong&gt; — Don’t forget you need them. If they don’t sit in your office doesn’t mean that they don’t use your software licences (e.g. IntelliJ IDEA, MS Visual Studio).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Issue tracking software&lt;/strong&gt; — a must-have. Jira, TFS, Trello — any will do, but you should have one. And only one.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Code versioning systems&lt;/strong&gt; — a must-have. Git, SVN, etc. will do. But the most common CVS nowadays is Git, so just use it if you don’t have any special reasons not to.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;management&quot;&gt;Management&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Highly skilled and communicative Team Leads that actually Care for their teammates&lt;/strong&gt; — this is a key factor for success. Try to find them or grow them.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Balanced team compositions&lt;/strong&gt; — like 1xSenior-2xMiddle-3xJunior, and not 1xMiddle-5xJunior. Try not to build entire teams from scratch (not always possible) — build a new team on the base of a current employee, who already holds culture and knowledge and share it with newcomers.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Clear expectations&lt;/strong&gt; — always translate clear expectations of people, tasks, etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Just enough standards and processes&lt;/strong&gt; — don’t push too much, but don’t leave too much at chance either. Planning, Code conventions, Branching, Pipelines, Rules on working with Issues, Release management — mostly must-have formal processes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Daily meetings (e.g. SCRUMS)&lt;/strong&gt; — absolutely mandatory. Just use it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Retrospectives&lt;/strong&gt; — learn how to do good ones. Almost must-have for remote teams.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Good requirements&lt;/strong&gt; — depends on your business, but most of the time you should put all of the effort to get the best and detailed requirements you can as remote communications are much less efficient and many things could be understood incorrectly. You really should pay attention to this.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use Issue tracker for all of your work&lt;/strong&gt; — no comments. Just use it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Excessive control at the start&lt;/strong&gt; — controversial topic, but try it. Synchronize on goals at the start of the day, check progress in the middle, check results at the end. If it is going well — relax and gracefully stop it, if it is not going well — make corrections.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Metrics&lt;/strong&gt; — have some metrics and watch for them regularly (e.g. velocity, bugs per feature, etc.). This will help you measure the performance of individuals and teams and look for problems. But be accurate with metrics, they should not become KPIs so people will not start to abuse them.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;communications-and-knowledge-sharing&quot;&gt;Communications and Knowledge Sharing&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Architecture diagrams&lt;/strong&gt; — you should have at least High Level Design diagrams and everyone should know where to find them.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Wiki&lt;/strong&gt; — an absolute must — this is an external brain for your company. Any will do, but Confluence is the most popular choice. You should pay special attention to make everyone contribute to wiki articles and not hold information in emails, brains, napkins, etc.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Chat&lt;/strong&gt; — controversial thing. But better have some structured chats with dedicated channels. Most popular are Slack, MS Teams, Skype. Use very carefully because chats can steal a lot (surprisingly a lot) of productive time from the teams.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Feedback on communications&lt;/strong&gt; — you should give it to each other regularly. Always try to improve it — become more clear, gentle, efficient.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Overcommunicate&lt;/strong&gt; — always. Not sure? Overcommunicate. Sure? Same.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1 on 1 s&lt;/strong&gt; — you should be doing them. Your Team Leads and managers should be doing them too. No excuses. They could be short and simple, but they must be in place.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;developing-people&quot;&gt;Developing people&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Individual Development plans&lt;/strong&gt; — talk with people, get to know what are they interested in, make formal IDPs, attach mentor, regularly track progress — PROFIT.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;culture&quot;&gt;Culture&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;A formal manifestation of your core values and principles incorporated in culture&lt;/strong&gt; — a very hard thing to do, but can help tremendously.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Culture agents/evangelists&lt;/strong&gt; — ideally if you have at least one in every team. They should “infect” their teammates with your culture (but reverse effect could also happen).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The Gathering&lt;/strong&gt; — you should try at all costs to gather all of your remote workers in one place at least several times a year (for example, on corporate events, strategy sessions, etc.).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That’s it. And may the Force be with you.&lt;/p&gt;</content><author><name>Nikolay Provotorov</name></author><category term="Management" /><category term="Remote work" /><category term="Management" /><summary type="html">We will skip the part about why do you do it (remote teams) and get straight to the point. Below are some short tips (derived from my experience, you can agree or disagree with it — it’s OK, this is strictly my opinion) to keep in mind when you are deciding, creating or dealing with remote software development teams.</summary></entry></feed>

@@ -1,0 +1,752 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>dotNET Hot Reload is Awesome - Notes and Thoughts</title>
+<meta name="description" content="Why do I need it?">
+
+
+  <meta name="author" content="Nikolay Provotorov">
+  
+  <meta property="article:author" content="Nikolay Provotorov">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes and Thoughts">
+<meta property="og:title" content="dotNET Hot Reload is Awesome">
+<meta property="og:url" content="http://localhost:4000/dotnet-hot-reload/">
+
+
+  <meta property="og:description" content="Why do I need it?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-01T00:00:00+03:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/dotnet-hot-reload/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes and Thoughts Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Notes and Thoughts
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/bio-photo.png" alt="Nikolay Provotorov" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Nikolay Provotorov</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>CTO @ shtormtech.ru. ex-PM, Software Architect, Team Lead, Software Developer</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://twitter.com/nprovotorov" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/nprovotorov" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="dotNET Hot Reload is Awesome">
+    <meta itemprop="description" content="Why do I need it?">
+    <meta itemprop="datePublished" content="2021-07-01T00:00:00+03:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/dotnet-hot-reload/" class="u-url" itemprop="url">dotNET Hot Reload is Awesome
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-01T00:00:00+03:00">July 1, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h2 id="why-do-i-need-it">Why do I need it?</h2>
+
+<p>Ever done something like this?</p>
+
+<ol>
+  <li>Build your app</li>
+  <li>Wait for it to start</li>
+  <li>Recognize that you need to change something</li>
+  <li>Stop your app</li>
+  <li>Change the code</li>
+  <li><code class="language-plaintext highlighter-rouge">GOTO 1</code> and wait again and again</li>
+</ol>
+
+<p>With <code class="language-plaintext highlighter-rouge">.NET 6</code> you can do this:</p>
+
+<ol>
+  <li>Build your app</li>
+  <li>Wait for it to start</li>
+  <li>Recognize that you need to change something</li>
+  <li>Change the code</li>
+  <li>Immediately see the result</li>
+</ol>
+
+<p>No more rebuilding and restarting for every little change.</p>
+
+<p>That makes the developer’s inner loop faster by reducing the time between code change and seeing the result.</p>
+
+<p><em>Note: some other languages had this feature for YEARS.</em></p>
+
+<h2 id="what-is-net-hot-reload">What is .NET Hot Reload?</h2>
+
+<p><a href="https://github.com/dotnet/core/issues/5510">Improve inner-loop performance for .NET developers</a> is one of the main themes for <code class="language-plaintext highlighter-rouge">.NET 6</code>.</p>
+
+<p>This theme aims at two goals:</p>
+
+<ul>
+  <li>Improving developer’s inner loop and boosting productivity</li>
+  <li>Attracting developers from other platforms. Since most of them already have hot reloading, the absence of it in <code class="language-plaintext highlighter-rouge">.NET</code> is a blocker for switching.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">.NET Hot Reload</code> watches your source files and applies supported code changes to your running app without restarting it. Application state also preserved.
+Unsupported changes (see Limitations section) will lead to rebuild and restart.</p>
+
+<p>Internaly <code class="language-plaintext highlighter-rouge">.NET Hot Reload</code> uses <a href="https://github.com/dotnet/roslyn/blob/main/docs/wiki/EnC-Supported-Edits.md">Roslyn Edit&amp;Continue</a> feature.</p>
+
+<h2 id="how-do-i-use-it">How do I use it?</h2>
+
+<h3 id="what-you-need">What you need</h3>
+
+<p>You will need <a href="https://dotnet.microsoft.com/download/dotnet/6.0">.NET 6.0</a>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Visual Studio 2019 v.16.11 Preview 1+</code> or</li>
+  <li><code class="language-plaintext highlighter-rouge">.NET 6 Preview 4+</code> if you plan to use <code class="language-plaintext highlighter-rouge">Visual Studio Code</code> or other IDE through the <code class="language-plaintext highlighter-rouge">dotnet watch</code> command</li>
+</ul>
+
+<h3 id="how-to-use-with-visual-studio-2019">How to use with Visual Studio 2019</h3>
+
+<ol>
+  <li>Run your app</li>
+  <li>Make <em>supported</em>(see Limitations section) code change</li>
+  <li>Press the <code class="language-plaintext highlighter-rouge">Apply code changes</code> button</li>
+  <li>PROFIT! You will see changes when updated code is re-executed</li>
+</ol>
+
+<h3 id="how-to-use-vs-code-or-other-ide">How to use VS Code (or other IDE)</h3>
+
+<ol>
+  <li>Run your favorite <code class="language-plaintext highlighter-rouge">Terminal</code> app</li>
+  <li>Go to your project directory</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">dotnet watch</code> - it should indicate that <code class="language-plaintext highlighter-rouge">Hot reload enabled</code></li>
+  <li>Make <em>supported</em> code change and Save the file</li>
+  <li>Wait a little :)</li>
+  <li>ROFIT! You will see changes when updated code is re-executed</li>
+</ol>
+
+<p><img src="/assets/images/dotnet-hot-reload/dotnet-hot-reload-sc1.png" alt="Hot Reload Enabled" /></p>
+
+<h2 id="what-are-the-limitations">What are the Limitations?</h2>
+
+<h3 id="what-types-of-applications-support-net-hot-reload">What types of applications support .NET Hot Reload</h3>
+
+<p><code class="language-plaintext highlighter-rouge">.NET Hot Reload</code> will work with (it may not correctly work right now, but it will at final release on November’21):</p>
+
+<ul>
+  <li>WPF</li>
+  <li>Windows Forms</li>
+  <li>.NET MAUI</li>
+  <li>ASP.NET Core (including Blazor, Razor pages, MVC)</li>
+  <li>Console apps</li>
+  <li>and maybe something else</li>
+</ul>
+
+<h3 id="what-changes-are-supported">What changes are <em>supported</em></h3>
+
+<p>Not all changes are supported.</p>
+
+<p>Documentation is still in progress, but you can read <a href="https://github.com/dotnet/roslyn/blob/main/docs/wiki/EnC-Supported-Edits.md">Edit&amp;Continue Roslyn docs</a> and <a href="https://docs.microsoft.com/en-gb/visualstudio/debugger/supported-code-changes-csharp?view=vs-2019">E&amp;C in Visual Studio</a> for the current list of supported edits.</p>
+
+<h2 id="when-can-i-use-it-in-production">When can I use it in Production?</h2>
+
+<p>You can start immediately - the <code class="language-plaintext highlighter-rouge">Bing</code> team <a href="https://devblogs.microsoft.com/dotnet/migration-of-bings-workflow-engine-to-net-5/">uses</a> <code class="language-plaintext highlighter-rouge">.NET 6</code> in Production since <code class="language-plaintext highlighter-rouge">Preview 1</code>.</p>
+
+<p>Or you can wait for <code class="language-plaintext highlighter-rouge">.NET 6 Release</code> - <strong>November 2021</strong>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#asp-net-core" class="page__taxonomy-item p-category" rel="tag">ASP.NET Core</a><span class="sep">, </span>
+    
+      <a href="/tags/#dotnet" class="page__taxonomy-item p-category" rel="tag">dotNET</a><span class="sep">, </span>
+    
+      <a href="/tags/#inner-loop" class="page__taxonomy-item p-category" rel="tag">Inner loop</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#development" class="page__taxonomy-item p-category" rel="tag">Development</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-07-01T00:00:00+03:00">July 1, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=dotNET+Hot+Reload+is+Awesome%20http%3A%2F%2Flocalhost%3A4000%2Fdotnet-hot-reload%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fdotnet-hot-reload%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fdotnet-hot-reload%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/short-tips-on-creating-and-managing-remote-software-development-teams/" class="pagination--pager" title="Short Tips on Creating and Managing Remote Software Development Team
+">Previous</a>
+    
+    
+      <a href="/csharp-9-records/" class="pagination--pager" title="C# 9 Record type
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/team-topologies-book-notes/" rel="permalink">Notes on Team Topologies Book
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-30T00:00:00+03:00">November 30, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project-forecasting/" rel="permalink">Project Forecasting Using Monte Carlo Method
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-29T00:00:00+03:00">August 29, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The first article in this series is here (Notes on Kanban Metrics)
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/openai-codex/" rel="permalink">SkyNet is (almost) here. OpenAIs developer AI - Codex
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-11T00:00:00+03:00">August 11, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/kanban-metrics/" rel="permalink">Notes On Kanban Metrics (Lead time, Cycle time, Throughput)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-25T00:00:00+03:00">July 25, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          11 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/nprovotorov" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nprovotorov" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Notes and Thoughts. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

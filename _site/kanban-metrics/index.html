@@ -1,0 +1,1018 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Notes On Kanban Metrics (Lead time, Cycle time, Throughput) - Notes and Thoughts</title>
+<meta name="description" content="Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.">
+
+
+  <meta name="author" content="Nikolay Provotorov">
+  
+  <meta property="article:author" content="Nikolay Provotorov">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Notes and Thoughts">
+<meta property="og:title" content="Notes On Kanban Metrics (Lead time, Cycle time, Throughput)">
+<meta property="og:url" content="http://localhost:4000/kanban-metrics/">
+
+
+  <meta property="og:description" content="Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-07-25T00:00:00+03:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/kanban-metrics/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Notes and Thoughts Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Notes and Thoughts
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="/assets/images/bio-photo.png" alt="Nikolay Provotorov" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Nikolay Provotorov</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>CTO @ shtormtech.ru. ex-PM, Software Architect, Team Lead, Software Developer</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="https://twitter.com/nprovotorov" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i><span class="label">Twitter</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/nprovotorov" rel="nofollow noopener noreferrer me"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Notes On Kanban Metrics (Lead time, Cycle time, Throughput)">
+    <meta itemprop="description" content="Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.">
+    <meta itemprop="datePublished" content="2021-07-25T00:00:00+03:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/kanban-metrics/" class="u-url" itemprop="url">Notes On Kanban Metrics (Lead time, Cycle time, Throughput)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-25T00:00:00+03:00">July 25, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          11 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <p>Disclaimer: in this article we are talking about Kanban Method, described by David J. Anderson and not traditional manufacturing Kanban.</p>
+
+<p>Second article in this series is here - <a href="/blog/2021-08-29-project-forecasting">Project Forecasting</a>.</p>
+
+<h2 id="kanban-metrics">Kanban metrics</h2>
+
+<p>Key kanban metrics that we will discuss in this article:</p>
+
+<ul>
+  <li>Lead time</li>
+  <li>Cycle time</li>
+  <li>Throughput</li>
+</ul>
+
+<p>There are other metrics that we will not discuss right now, but they can be useful for you:</p>
+
+<ul>
+  <li>Work In Progress (WIP)</li>
+  <li>Cumulative Flow Diagram (CFD)</li>
+  <li>Flow Efficiency Chart</li>
+</ul>
+
+<h2 id="purpose-of-these-metrics-why-do-we-need-them">Purpose of these metrics (Why do we need them?)</h2>
+
+<p>We can use these metrics for:</p>
+
+<ul>
+  <li>Forecasting feature and/or project completion dates</li>
+  <li>Setting SLE/SLAs for service</li>
+  <li>Providing feedback loop for service improvement</li>
+</ul>
+
+<h3 id="forecasting-feature-andor-project-completion-dates">Forecasting feature and/or project completion dates</h3>
+
+<p>Why forecast something? To do something about it! (c)</p>
+
+<p>E.g.</p>
+
+<ul>
+  <li>decide when to start a request to deliver it on time - according to SLEs/Committed date/etc.</li>
+  <li>change the resource allocation for project or feature</li>
+  <li>make decisions about the project’s scope</li>
+  <li>prioritize work</li>
+  <li>etc.</li>
+</ul>
+
+<p>If you measure something and not doing anything as a result of your measurement - this is most likely a <a href="https://en.wikipedia.org/wiki/Muda_(Japanese_term)"><code class="language-plaintext highlighter-rouge">Muda</code></a> or <em>waste</em>.
+You should stop wasting time on this measurement or start using this data in your decisions and actions.</p>
+
+<h3 id="setting-sleslas-for-service">Setting SLE/SLAs for service</h3>
+
+<p><code class="language-plaintext highlighter-rouge">SLA</code> - Service Level Agreement. The Agreement you make with your clients.
+The Keyword is <strong>Agreement</strong>. The Client must <strong>agree</strong> with you (typically through a legal contract).</p>
+
+<p>If you just say to your internal customer <code class="language-plaintext highlighter-rouge">Our lead time is X. Deal with it</code> - this is not an agreement :)</p>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/deal-with-it.jpg" alt="Deal with it" /></p>
+
+<p>Most of the time this term is used for external clients and SLAs violation will result in a fine.</p>
+
+<p><code class="language-plaintext highlighter-rouge">SLE</code> - Service Level Expectations is a ‘soft’ kind of SLA used to move away from promises and strict legal commitments to more adaptive and realistic expectations.</p>
+
+<p>For internal services we will mostly set SLEs and not SLAs and set them based on actual numbers.</p>
+
+<p>Other SLX terms for reference:</p>
+
+<ul>
+  <li>SLO - Service Level Objective. The Objective team must hit</li>
+  <li>SLI - Service Level Indicators. The actual metrics of performance</li>
+</ul>
+
+<h3 id="providing-feedback-loop-for-service-improvement">Providing feedback loop for service improvement</h3>
+
+<p>We can use these metrics in our <code class="language-plaintext highlighter-rouge">Service Delivery Reviews</code> (standard Kanban cadence) to see how our changes in processes and tools affect our service as a system.</p>
+
+<h3 id="beware-goodharts-law">Beware: Goodhart’s law</h3>
+
+<p>There is a big temptation to use these metrics as KPIs, but you shouldn’t do this.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Goodhart%27s_law">Goodhart’s Law</a>:</p>
+<blockquote>
+  <p>Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.</p>
+</blockquote>
+
+<p>And it’s generalization by Marilyn Strathern:</p>
+<blockquote>
+  <p>When a measure becomes a target, it ceases to be a good measure.</p>
+</blockquote>
+
+<p>In short: avoid setting KPIs based on these metrics - they will be abused and you will lose them as indicators.</p>
+
+<p>E.g. how to reduce cycle time by two times?</p>
+
+<ul>
+  <li>Do work faster</li>
+  <li>or reduce the work item size, so it will go through the system faster</li>
+</ul>
+
+<p>which way would be easier for the team?</p>
+
+<h3 id="lead-time-in-kanban">Lead Time in Kanban</h3>
+
+<h4 id="what-is-it-for">What is it for?</h4>
+
+<p>Answers a simple question: <code class="language-plaintext highlighter-rouge">How long will this take?</code>
+<img src="/assets/images/2021-07-25-kanban-metrics/estimate-your-work.jpg" alt="How long will this take" /></p>
+
+<p>Wait, but we already ask our devs that question, why do we need another metric for this?</p>
+
+<p>Let’s see - developer estimates some work item as 8 hrs, but customer gets it delivered  after 2 weeks (because work was sitting in a backlog for 2 days, there were some dependencies, testing, rework, documentation, deployment, etc.)</p>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/estimates-mr-dev.jpg" alt="Estimates Mr.Developer" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">WTF?!</code> says the customer :)</p>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/wtf.png" alt="WTF" /></p>
+
+<p>So developer’s estimates make almost no sense and no value in case of our question <code class="language-plaintext highlighter-rouge">How long will this take?</code>.</p>
+
+<p>The Customer wants to know when he will get the final result and not how long a developer will write code - and the answer to this question is <code class="language-plaintext highlighter-rouge">Lead Time</code>.</p>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/estimates-deadlines.jpg" alt="Estimates as deadlines" /></p>
+
+<p>But there are more deep questions to this: <code class="language-plaintext highlighter-rouge">When it should be delivered?</code> –&gt; <code class="language-plaintext highlighter-rouge">When we should commit to it?</code></p>
+
+<p>So this metric also answers the question - <code class="language-plaintext highlighter-rouge">When we must commit to this work to finish it on time?</code></p>
+
+<p>Despite the simplicity of the question, this is a little confusing metric, because you need to agree on what it means :)</p>
+
+<p>The most used meanings of <code class="language-plaintext highlighter-rouge">Lead Time</code> are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Customer Lead Time</code> - the time between a request being <strong>made</strong> by the customer and its delivery (includes everything happening between these points, so this is the biggest value)</li>
+  <li><code class="language-plaintext highlighter-rouge">System Lead Time</code> - the time between a request being formally <strong>accepted</strong> (or <strong>committed</strong>) by the team and its delivery to some ‘done’ column, which is usually the first column, that doesn’t have a WIP limit on it.</li>
+</ul>
+
+<p>The second definition is more popular in Software development, so we will use it for the article.</p>
+
+<p>In this case teams have a WIP-limited column, usually ‘Dev Ready’/’Engineering ready’/’Committed’ which acts as a <code class="language-plaintext highlighter-rouge">committment point</code>. Any work pulled in this column will start its <code class="language-plaintext highlighter-rouge">Lead Time</code> timer.</p>
+
+<p>Also usually teams have some ‘precommitment’ column (e.g. ‘Pre-Analysis’) where they gather more information on work to be done to ensure dependencies are met, reduce risks, etc.</p>
+
+<p>The reason for this kind of measurement is to support the maximum delay decision - we need to do <strong>what</strong> we must do and <strong>when</strong> we must do (not early and not late - Just In Time). And in Software development most of the kanban systems doesn’t have a requirement to deliver ALL of the requests - only the most valuable ones, so any work can sit and wait in a backlog waiting for its time and thus increasing <code class="language-plaintext highlighter-rouge">Customer Lead Time</code> indefinitely, so we need another metric :)</p>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/kanban-times.png" alt="Kanban Lead and Cycle time" /></p>
+
+<h4 id="how-to-calculate-lead-time">How to calculate Lead Time?</h4>
+
+<p>Just start writing down <code class="language-plaintext highlighter-rouge">Committment date</code> and <code class="language-plaintext highlighter-rouge">Done date</code> (most of task trackers already doing this you just need to learn how to get this information).</p>
+
+<p>Then,</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>System Lead Time = Done date - Committment date
+</code></pre></div></div>
+
+<h3 id="cycle-time-in-kanban">Cycle Time in Kanban</h3>
+
+<h4 id="what-is-it-for-1">What is it for?</h4>
+
+<p>First Question: <code class="language-plaintext highlighter-rouge">When it will be done if you start it right now?</code></p>
+
+<p>Second question: <code class="language-plaintext highlighter-rouge">When we must start it to finish before the expected delivery date?</code></p>
+
+<p>And again you need to clearly define what <code class="language-plaintext highlighter-rouge">Cycle Time</code> means in your case.</p>
+
+<p>Most of the time it has these meanings:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Cycle Time</code> - the time between work is being started by someone and its delivery date</li>
+  <li><code class="language-plaintext highlighter-rouge">Local Cycle Time</code> - the time it takes for a work to pass through some phase of kanban system (e.g. from column A to column B, from Development to Deployment, etc.)</li>
+</ul>
+
+<h4 id="how-to-calculate-cycle-time">How to calculate Cycle Time?</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cycle Time = Done date - Started date
+</code></pre></div></div>
+
+<h3 id="lead-time-vs-cycle-time-in-kanban">Lead Time vs Cycle Time in Kanban</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Lead Time</code> is what <strong>customers</strong> perceives. They don’t care if you have very fast <code class="language-plaintext highlighter-rouge">Cycle Time</code>, but <code class="language-plaintext highlighter-rouge">Lead Time</code> is big (and the term ‘big’ is also relative to the customer). So improvements should be focused on it.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Cycle Time</code> is what <strong>team</strong> mostly perceives and controls.</p>
+
+<h3 id="throughput-in-kanban">Throughput in Kanban</h3>
+
+<h4 id="what-is-it-for-2">What is it for?</h4>
+
+<p>Answers question: <code class="language-plaintext highlighter-rouge">How many work items we will deliver in some period?</code>, e.g. <code class="language-plaintext highlighter-rouge">How many work items we will deliver in a month?</code></p>
+
+<h4 id="how-to-calculate-throughput">How to calculate Throughput?</h4>
+
+<p>Calculate the amount of work items delivered weekly, write it down, calculate monthly and other periods as needed.</p>
+
+<h2 id="probabilistic-world">Probabilistic world</h2>
+
+<p>And here comes inconvenient truth - we live in a probabilistic world and we do complex work with a high degree of uncertainty, so we actually can’t use simple discrete numbers to predict the future.</p>
+
+<p>This is a very tough topic for managers as they often just refuse to accept it despite what actual numbers are saying.</p>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/joker.jpg" alt="Probability math" /></p>
+
+<p>Sad, but true.</p>
+
+<h3 id="distributions">Distributions</h3>
+
+<p>We should go to distributions for help.</p>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/loki.jpg" alt="Desperate distributions" /></p>
+
+<p>So <code class="language-plaintext highlighter-rouge">Lead Time</code>, <code class="language-plaintext highlighter-rouge">Cycle Time</code>, etc. are not single numbers - they are <a href="https://en.wikipedia.org/wiki/Probability_distribution">distributions</a>.</p>
+
+<p>And to make things even more complicated - <code class="language-plaintext highlighter-rouge">Lead Time</code> and <code class="language-plaintext highlighter-rouge">Cycle Time</code> are NOT normal(bell-curved) distributions.</p>
+
+<p>To get the value of <code class="language-plaintext highlighter-rouge">Lead Time</code> or <code class="language-plaintext highlighter-rouge">Cycle Time</code> we need to decide on the level of uncertainty that we agree to accept (choose a percentile).</p>
+
+<p>So <code class="language-plaintext highlighter-rouge">Lead Time</code> from <code class="language-plaintext highlighter-rouge">Our Lead Time is 10 days</code> becomes <code class="language-plaintext highlighter-rouge">With 95% probability our Lead Time is 15 days or less. Or with 80% probability 5 days or less. Choose what you like.</code>.</p>
+
+<p>And we really should avoid using mode and average values for these metrics.</p>
+
+<h4 id="lead-time-and-cycle-time-distributions">Lead Time and Cycle Time distributions</h4>
+
+<p><img src="/assets/images/2021-07-25-kanban-metrics/inside-lead-time-distribution-chart-with-license.png" alt="Lead and Cycle Time distributions" /></p>
+
+<p>This is a common <code class="language-plaintext highlighter-rouge">Lead Time</code> distribution shape, in fact, it is often described by a named distribution - <a href="https://en.wikipedia.org/wiki/Weibull_distribution">Weibull distribution</a> with different shape parameters.</p>
+
+<p>The left part of this distribution is limited, while the right (tail) is not. Which is a very sad thing for any Project Manager.</p>
+
+<p>Distribution may differ for different work types and classes of service and you can (and should) also calculate them distinctly.</p>
+
+<p>If we have a long tail - we should investigate and try to narrow it or extract features (type of work, class of service, etc.) to improve predictability.</p>
+
+<h5 id="how-to-create-a-chart-like-this">How to create a chart like this?</h5>
+
+<p>Just make a histogram from your data (Cycle time, Lead time, etc.)</p>
+
+<h5 id="how-much-data-do-you-need-to-plot-this">How much data do you need to plot this?</h5>
+
+<p>More is better, but 10-12 data points should be enough (according to <a href="https://www.youtube.com/watch?v=rNotEf40qUU">Troy Magennis</a>)</p>
+
+<h3 id="why-averages-are-bad">Why Averages are bad</h3>
+
+<p>Averages are useful when we have a normal or bell-shaped distribution, but they become misleading when we have a skewed distribution, like a Weibull.</p>
+
+<p>See the picture above - the average has less than 63% probability, so in slightly less than a half of the times work will take MORE than average, and not simply more, but more by multiple times. Using this average to forecast project completion or setting SLA can lead to a disaster.</p>
+
+<p>But, you can use averages for <code class="language-plaintext highlighter-rouge">Lead Time</code> and <code class="language-plaintext highlighter-rouge">Cycle Time</code> to observe their trends.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Throughput</code> metric most likely will have a normal distribution, so you can use an average in that case.</p>
+
+<h3 id="beware-of-mode">Beware of Mode</h3>
+
+<p>The mode is the most often occurring number in the data set (the ‘peak’ in distribution). It is easily remembered by humans (<strong>oh, the peak is X! so I will think it will take X days on average…</strong>), but again see the picture above - it has LESS than 50% probability (according to Alexey Zhiglov it is between 18%-28% in product development).</p>
+
+<p>Beware to use it for forecasting.</p>
+
+<h3 id="good-boys---percentiles">Good boys - Percentiles</h3>
+
+<p>We should use percentiles to establish SLEs.</p>
+
+<p>The most used percentiles are (note how big the difference in Lead Times for them will be): 80th, 85th, 90th, 95th, 98th, 99th.</p>
+
+<p>E.g. we have a Lead Time of</p>
+
+<ul>
+  <li>10 days at 80th percentile</li>
+  <li>20 days at 99th percentile</li>
+</ul>
+
+<p>This means that with a probability of 80% we will deliver work in 10 days or less, but if we want a guaranteed date (99th percentile) we will set an expectation to 20 days or less.</p>
+
+<p>It is a good practice to establish different SLE/SLA based on type of work and/or class of service to improve predictability.</p>
+
+<p>Examples (numbers are arbitrary):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Work type</th>
+      <th>99%</th>
+      <th>80%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>New feature</td>
+      <td>15d</td>
+      <td>3d</td>
+    </tr>
+    <tr>
+      <td>Bug</td>
+      <td>7d</td>
+      <td>2d</td>
+    </tr>
+    <tr>
+      <td>Change Request</td>
+      <td>10d</td>
+      <td>4d</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Customers/Managers can choose what level of risk to accept.</p>
+
+<h2 id="example-kanban-metrics-dashboard">Example Kanban Metrics Dashboard</h2>
+
+<p>For one of our teams we use this basic dashboard that we update weekly:
+<img src="/assets/images/2021-07-25-kanban-metrics/metrics-dashboard.png" alt="Metrics dashboard" /></p>
+
+<p>following by snapshot of current metrics distributions like this:
+<img src="/assets/images/2021-07-25-kanban-metrics/distribution-example.png" alt="Example Cycle Time distribution" /></p>
+
+<h2 id="are-my-lead-time-distributions-good-for-forecasting">Are my Lead Time distributions good for forecasting?</h2>
+
+<p>There are two types of distributions in terms of their fittnes for forecasting:</p>
+
+<ul>
+  <li>Fat-tailed</li>
+  <li>Thin-tailed</li>
+</ul>
+
+<p>As the name implies, Fat-tailed distribution has a looong, ‘fat’ tail which results in bad process predictability and thus should be used for forecasting with caution.</p>
+
+<p>On the other hand, Thin-tailed distribution, has a short tail and can be used to forecast future results.</p>
+
+<h3 id="how-can-we-distinguish-between-them">How can we distinguish between them?</h3>
+
+<p>It’s easy - we must find how the 98th percentile relates to the Median (50th percentile).</p>
+
+<p>If it is more than <strong>5.6</strong>, then it is Fat-tailed distribution.</p>
+
+<p>If it is less than <strong>5.6</strong>, then it is Thin-tailed distribution.</p>
+
+<h3 id="what-should-we-do-with-fat-tailed-distributions">What should we do with Fat-tailed distributions?</h3>
+
+<p>We need to find a way to trim this tail:</p>
+
+<ul>
+  <li>You may have multimodal data in your Lead Time and you should try to extract it to separate datasets based on Class of Service, Type of Work, etc. which can result in several more thin-tailed distributions</li>
+  <li>Do some analysis on tasks with longest Lead Times to determine what caused them to find a way to mitigate such issues in future</li>
+</ul>
+
+<h2 id="sidenote-do-we-need-estimates">Sidenote: Do we need estimates?</h2>
+
+<p>It depends.</p>
+
+<p>The purpose of estimation is to support decisions.
+If an estimate doesn’t help make a decision, then it doesn’t have any value.
+If an estimate does not lead to any decision or change in the system and knowledge of the estimate does not give you some value for prioritization (e.g. cost of delay) - it is a waste.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Consider gathering at least these metrics:</p>
+
+<ul>
+  <li>Averages of <code class="language-plaintext highlighter-rouge">Lead Time</code>, <code class="language-plaintext highlighter-rouge">Cycle Time</code> and <code class="language-plaintext highlighter-rouge">Throughput</code> to discover their trends</li>
+  <li><code class="language-plaintext highlighter-rouge">Lead Time</code>, <code class="language-plaintext highlighter-rouge">Cycle Time</code> distributions and their 80/90/95th percentiles to set SLEs and forecast</li>
+</ul>
+
+<p>Using these metrics we can answer very important questions:</p>
+
+<ul>
+  <li>When we must commit to particular work to deliver it on time? (<code class="language-plaintext highlighter-rouge">Lead Time</code>)</li>
+  <li>How long does it take to deliver a work item? (<code class="language-plaintext highlighter-rouge">Lead Time</code>)</li>
+  <li>How long do we actually deliver a work item? (<code class="language-plaintext highlighter-rouge">Cycle Time</code>)</li>
+  <li>What amount of work we can deliver in a month? (<code class="language-plaintext highlighter-rouge">Throughput</code>)</li>
+</ul>
+
+<p>We can predict the future based on previous performance, but only with probabilities attached.</p>
+
+<p>Also, keep in mind - these predictions work well for single pieces of work, but will not work as good for whole projects as they will accumulate uncertainty - there are other technics for this (mostly the Monte Carlo method) and we will look into it in another article - <a href="/blog/2021-08-29-project-forecasting">Project Forecasting</a>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#kanban" class="page__taxonomy-item p-category" rel="tag">Kanban</a><span class="sep">, </span>
+    
+      <a href="/tags/#management" class="page__taxonomy-item p-category" rel="tag">Management</a><span class="sep">, </span>
+    
+      <a href="/tags/#metrics" class="page__taxonomy-item p-category" rel="tag">Metrics</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#management" class="page__taxonomy-item p-category" rel="tag">Management</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-07-25T00:00:00+03:00">July 25, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Notes+On+Kanban+Metrics+%28Lead+time%2C+Cycle+time%2C+Throughput%29%20http%3A%2F%2Flocalhost%3A4000%2Fkanban-metrics%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fkanban-metrics%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fkanban-metrics%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/csharp-9-records/" class="pagination--pager" title="C# 9 Record type
+">Previous</a>
+    
+    
+      <a href="/openai-codex/" class="pagination--pager" title="SkyNet is (almost) here. OpenAIs developer AI - Codex
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You May Also Enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/team-topologies-book-notes/" rel="permalink">Notes on Team Topologies Book
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-11-30T00:00:00+03:00">November 30, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/project-forecasting/" rel="permalink">Project Forecasting Using Monte Carlo Method
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-29T00:00:00+03:00">August 29, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">The first article in this series is here (Notes on Kanban Metrics)
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/openai-codex/" rel="permalink">SkyNet is (almost) here. OpenAIs developer AI - Codex
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-08-11T00:00:00+03:00">August 11, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/csharp-9-records/" rel="permalink">C# 9 Record type
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2021-07-03T00:00:00+03:00">July 3, 2021</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">When I should consider using record?
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/nprovotorov" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://github.com/nprovotorov" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Notes and Thoughts. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

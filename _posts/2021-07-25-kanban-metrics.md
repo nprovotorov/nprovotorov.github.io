@@ -98,23 +98,23 @@ which way would be easier for the team?
 #### What is it for?
 
 Answers a simple question: `How long will this take?`
-![How long will this take](/static/images/2021-07-25-kanban-metrics/estimate-your-work.jpg)
+![How long will this take](/assets/images/2021-07-25-kanban-metrics/estimate-your-work.jpg)
 
 Wait, but we already ask our devs that question, why do we need another metric for this?
 
 Let's see - developer estimates some work item as 8 hrs, but customer gets it delivered  after 2 weeks (because work was sitting in a backlog for 2 days, there were some dependencies, testing, rework, documentation, deployment, etc.)
 
-![Estimates Mr.Developer](/static/images/2021-07-25-kanban-metrics/estimates-mr-dev.jpg)
+![Estimates Mr.Developer](/assets/images/2021-07-25-kanban-metrics/estimates-mr-dev.jpg)
 
 `WTF?!` says the customer :)
 
-![WTF](/static/images/2021-07-25-kanban-metrics/wtf.png)
+![WTF](/assets/images/2021-07-25-kanban-metrics/wtf.png)
 
 So developer's estimates make almost no sense and no value in case of our question `How long will this take?`.
 
 The Customer wants to know when he will get the final result and not how long a developer will write code - and the answer to this question is `Lead Time`.
 
-![Estimates as deadlines](/static/images/2021-07-25-kanban-metrics/estimates-deadlines.jpg)
+![Estimates as deadlines](/assets/images/2021-07-25-kanban-metrics/estimates-deadlines.jpg)
 
 But there are more deep questions to this: `When it should be delivered?` --> `When we should commit to it?`
 
@@ -135,7 +135,7 @@ Also usually teams have some 'precommitment' column (e.g. 'Pre-Analysis') where 
 
 The reason for this kind of measurement is to support the maximum delay decision - we need to do **what** we must do and **when** we must do (not early and not late - Just In Time). And in Software development most of the kanban systems doesn't have a requirement to deliver ALL of the requests - only the most valuable ones, so any work can sit and wait in a backlog waiting for its time and thus increasing `Customer Lead Time` indefinitely, so we need another metric :)
 
-![Kanban Lead and Cycle time](/static/images/2021-07-25-kanban-metrics/kanban-times.png)
+![Kanban Lead and Cycle time](/assets/images/2021-07-25-kanban-metrics/kanban-times.png)
 
 #### How to calculate Lead Time?
 
@@ -190,7 +190,7 @@ And here comes inconvenient truth - we live in a probabilistic world and we do c
 
 This is a very tough topic for managers as they often just refuse to accept it despite what actual numbers are saying.
 
-![Probability math](/static/images/2021-07-25-kanban-metrics/joker.jpg)
+![Probability math](/assets/images/2021-07-25-kanban-metrics/joker.jpg)
 
 Sad, but true.
 
@@ -198,7 +198,7 @@ Sad, but true.
 
 We should go to distributions for help.
 
-![Desperate distributions](/static/images/2021-07-25-kanban-metrics/loki.jpg)
+![Desperate distributions](/assets/images/2021-07-25-kanban-metrics/loki.jpg)
 
 So `Lead Time`, `Cycle Time`, etc. are not single numbers - they are [distributions](https://en.wikipedia.org/wiki/Probability_distribution).
 
@@ -212,7 +212,7 @@ And we really should avoid using mode and average values for these metrics.
 
 #### Lead Time and Cycle Time distributions
 
-![Lead and Cycle Time distributions](/static/images/2021-07-25-kanban-metrics/inside-lead-time-distribution-chart-with-license.png)
+![Lead and Cycle Time distributions](/assets/images/2021-07-25-kanban-metrics/inside-lead-time-distribution-chart-with-license.png)
 
 This is a common `Lead Time` distribution shape, in fact, it is often described by a named distribution - [Weibull distribution](https://en.wikipedia.org/wiki/Weibull_distribution) with different shape parameters.
 
@@ -275,10 +275,10 @@ Customers/Managers can choose what level of risk to accept.
 ## Example Kanban Metrics Dashboard
 
 For one of our teams we use this basic dashboard that we update weekly:
-![Metrics dashboard](/static/images/2021-07-25-kanban-metrics/metrics-dashboard.png)
+![Metrics dashboard](/assets/images/2021-07-25-kanban-metrics/metrics-dashboard.png)
 
 following by snapshot of current metrics distributions like this:
-![Example Cycle Time distribution](/static/images/2021-07-25-kanban-metrics/distribution-example.png)
+![Example Cycle Time distribution](/assets/images/2021-07-25-kanban-metrics/distribution-example.png)
 
 ## Are my Lead Time distributions good for forecasting?
 
