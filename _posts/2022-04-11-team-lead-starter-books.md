@@ -69,6 +69,8 @@ Not new, but trending methodology which I prefer nowadays as a default choice fo
 # Leadership
 
 1. [Extreme Ownership](https://www.amazon.com/Extreme-Ownership-U-S-Navy-SEALs-ebook/dp/B0739PYQSS/) by Jocko Willink - one of the best books on leadership, see my [review](/extreme-ownership-book-notes)
+
+
 # Software Architecture
 
 1. [Software Architecture in Practice](https://www.amazon.com/Software-Architecture-Practice-3rd-Engineering/dp/0321815734) - all concepts and practices you need are in this book
