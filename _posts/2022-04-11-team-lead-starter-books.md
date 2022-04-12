@@ -56,6 +56,7 @@ Not new, but trending methodology which I prefer nowadays as a default choice fo
 7. [The Practice of Management](https://www.amazon.com/Practice-Management-Peter-F-Drucker-ebook/dp/B003F1WM8E/) by Peter Drucker - old, but very valuable book from one of the most (or THE most?) influential management thinker
 8. [Out of the crisis](https://www.amazon.com/Out-Crisis-reissue-Edwards-Deming-ebook/dp/B08FZLVM1D/) by Edwards W. Deming - famous 14 points for Management
 9. [Measure What Matters: OKRs: The Simple Idea that Drives 10x Growth](https://www.amazon.com/Measure-What-Matters-Simple-Drives-ebook/dp/B078X4HKS9) by John Doerr - must read on organizational goal setting (THE OKR guide)
+10. [Team Topologies](https://www.amazon.com/Team-Topologies-Organizing-Business-Technology-ebook/dp/B09JWT9S4D/) - great book on team structuring, see my [review](team-topologies-book-notes)
 
 # Coaching
 
