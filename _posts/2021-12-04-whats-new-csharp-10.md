@@ -1,5 +1,5 @@
 ---
-title: "What's is new in C# 10"
+title: "What's new in C# 10"
 date: '2021-12-04'
 categories:
 - Development
