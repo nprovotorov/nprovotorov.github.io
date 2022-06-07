@@ -1,3 +1,8 @@
+```
+bundle exec jekyll serve
+
+```
+
 # Used theme
 
 - [this](https://github.com/mmistakes/mm-github-pages-starter/generate)
