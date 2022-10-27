@@ -1,6 +1,6 @@
 ---
 title: '.NET 7 Built-in container support for the .NET SDK'
-date: '2021-07-03'
+date: '2022-10-27'
 categories:
 - Development
 tags:
