@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Nikolay Provotorov"
   avatar : "/assets/images/bio-photo.png"
-  bio    : "EM @ avito.tech. ex-CTO, ex-PM, Software Architect, Team Lead, Software Developer"
+  bio    : "EM @ avito.tech. ex-[CTO, PM, Software Architect, Team Lead, Software Developer]"
   links:
     #- label: "Website"
     #  icon: "fas fa-fw fa-link"
