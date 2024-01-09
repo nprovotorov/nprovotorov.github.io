@@ -27,6 +27,7 @@ Most companies adopted agile in one way or another, so 95% chance that you will 
 1. [Scrum and XP from the Trenches](https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/) by Henrik Kniberg - very good field manual on how to SCRUM
 2. [Official Scrum Guide](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-US.pdf#zoom=100) by Ken Schwaber and Jeff Sutherland - RTFM :) Note: this guide gets eventual updates and changes over time to adopt current practices in the Scrum community, so it is always helpful to read the most recent version of the guide
 3. Optional: [Scrum: The Art of Doing Twice the Work in Half the Time](https://www.amazon.com/Scrum-Doing-Twice-Work-Half/dp/038534645X) by Jeff Sutherland
+4. [Large-Scale Scrum: More with LeSS](https://www.amazon.com/Large-Scale-Scrum-More-Addison-Wesley-Signature/dp/0321985710) // added 09.01.24 - I highly recommend this book for any kind of technical management role
 
 ## Kanban (Kanban Method, to be precise)
 
