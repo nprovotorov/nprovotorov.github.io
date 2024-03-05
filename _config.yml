@@ -14,9 +14,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Notes and Thoughts
+title_separator: "|"
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  My notes, thoughts and blog posts mostly on software development and engineering management.
+  This is Nikolay Provotorov's Blog.
+  Here you can find my notes, thoughts and blog posts on software development and engineering management topics.
 twitter_username: nprovotorov
 github_username: nprovotorov
 minimal_mistakes_skin: default
@@ -125,3 +127,11 @@ analytics:
   google:
     tracking_id: "G-SK5MGQZEXZ"
     anonymize_ip: false # default
+
+social:
+  type:  Person # Person or Organization (defaults to Person)
+  name:  Nikolay Provotorov # If the user or organization name differs from the site's name
+  links:
+    - "https://twitter.com/nprovotorov"
+    - "https://www.linkedin.com/in/nprovotorov"
+    - "https://www.github.com/nprovotorov"
