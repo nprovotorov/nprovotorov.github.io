@@ -38,9 +38,9 @@ Google we will see development of this term and maybe someday we will have the s
 
 Some links I’ve found interesting:
 - [Simon Sinek's video](https://www.youtube.com/watch?v=V_uRvUBvA0I)
-- https://blog.smilingmind.com.au/what-is-mental-fitness
-- https://www.starlingminds.com/mental-fitness-explained-by-a-cbt-psychologist/
-- https://www.newthinking.com/health/mental-fitness-over-mental-health-a-rhetorical-shift
-- https://eightify.app/summary/personal-development-and-relationships/simon-sinek-s-tips-for-mental-fitness-relationships-and-purpose-e230
-- https://www.entrepreneur.com/leadership/5-tips-to-build-mental-fitness-within-your-teams/360437
+- [https://blog.smilingmind.com.au/what-is-mental-fitness](https://blog.smilingmind.com.au/what-is-mental-fitness)
+- [https://www.starlingminds.com/mental-fitness-explained-by-a-cbt-psychologist/](https://www.starlingminds.com/mental-fitness-explained-by-a-cbt-psychologist/)
+- [https://www.newthinking.com/health/mental-fitness-over-mental-health-a-rhetorical-shift](https://www.newthinking.com/health/mental-fitness-over-mental-health-a-rhetorical-shift)
+- [https://eightify.app/summary/personal-development-and-relationships/simon-sinek-s-tips-for-mental-fitness-relationships-and-purpose-e230](https://eightify.app/summary/personal-development-and-relationships/simon-sinek-s-tips-for-mental-fitness-relationships-and-purpose-e230)
+- [https://www.entrepreneur.com/leadership/5-tips-to-build-mental-fitness-within-your-teams/360437](https://www.entrepreneur.com/leadership/5-tips-to-build-mental-fitness-within-your-teams/360437)
 
